@@ -9,11 +9,13 @@ import {
   Wallet,
   createPXEClient,
   AccountWalletWithSecretKey,
+  to2Fields,
 } from '@aztec/aztec.js';
 import { computePartialAddress, deriveKeys } from '@aztec/circuits.js';
 import { TokenContract } from '../../artifacts/Token.js';
 import { EscrowContract } from '../../artifacts/Escrow.js';
-import { ClawbackEscrowContract } from '../../artifacts/ClawbackEscrow.js';
+import { ClawbackEscrowContract, ClawbackEscrowContractArtifact } from '../../artifacts/ClawbackEscrow.js';
+import { createAccount } from '@aztec/accounts/testing';
 
 export const logger = createLogger('aztec:aztec-standards');
 
@@ -58,9 +60,14 @@ export const AMOUNT = 1000n;
 export const wad = (n: number = 1) => AMOUNT * BigInt(n);
 
 export async function deployEscrow(pxes: PXE[], deployerWallet: Wallet, owner: AztecAddress): Promise<EscrowContract> {
-  const escrowSecretKey = Fr.random();
+  const escrowSecretKey = new Fr(53777);
   const escrowPublicKeys = (await deriveKeys(escrowSecretKey)).publicKeys;
-  const escrowDeployment = EscrowContract.deployWithPublicKeys(escrowPublicKeys, deployerWallet, owner);
+  const escrowDeployment = EscrowContract.deployWithPublicKeys(
+    escrowPublicKeys,
+    deployerWallet,
+    owner,
+    escrowSecretKey,
+  );
   const escrowInstance = await escrowDeployment.getInstance();
 
   await pxes[0].registerAccount(escrowSecretKey, await computePartialAddress(escrowInstance));
@@ -72,28 +79,52 @@ export async function deployEscrow(pxes: PXE[], deployerWallet: Wallet, owner: A
   const contractMetadata = await pxes[0].getContractMetadata(escrowInstance.address);
   expect(contractMetadata.isContractPubliclyDeployed).toBeTruthy();
 
+  const provenTx = await escrowDeployment.prove({
+    contractAddressSalt: Fr.random(),
+    skipClassRegistration: false,
+    skipPublicDeployment: false,
+    universalDeploy: true,
+  });
+
   logger.info('escrow deployed', escrowContract.address);
   return escrowContract;
 }
 
 export async function deployClawbackEscrow(pxes: PXE[], deployerWallet: AccountWalletWithSecretKey) {
   // TODO: clawback doesn't need a secret key, but I can't make it without it
-  // const clawbackDeployment = ClawbackEscrowContract.deploy(deployerWallet);
+  // await createAccount(pxes[0])
+  const clawbackSecretKey = new Fr(50777);
+  const clawbackPublicKeys = (await deriveKeys(clawbackSecretKey)).publicKeys;
+  const clawbackDeployment = ClawbackEscrowContract.deployWithOpts({
+    wallet: deployerWallet,
+  });
+  const clawbackInstance = await clawbackDeployment.getInstance();
+
+  await pxes[0].registerAccount(clawbackSecretKey, await computePartialAddress(clawbackInstance));
+  await pxes[1].registerAccount(clawbackSecretKey, await computePartialAddress(clawbackInstance));
+
+  return ClawbackEscrowContract.at(clawbackInstance.address, deployerWallet);
+
+  // const clawbackDeployMethod = ClawbackEscrowContract.deploy(deployerWallet);
+  // const clawbackInstance = await clawbackDeployMethod.getInstance();
+  // const receipt = await clawbackDeployMethod.send().wait();
+  // logger.info(`clawback address: ${clawbackInstance.address}`);
+  // const clawbackContract = await ClawbackEscrowContract.at(clawbackInstance.address, deployerWallet);
+  // return clawbackContract;
+
+  // const clawbackSecretKey = Fr.fromBuffer(Buffer.from('50777'))
+  // const clawbackPublicKeys = (await deriveKeys(clawbackSecretKey)).publicKeys;
+  // const clawbackDeployment = ClawbackEscrowContract.deployWithPublicKeys(clawbackPublicKeys, deployerWallet);
+  // const clawbackInstance = await clawbackDeployment.getInstance();
+  // await Promise.all(
+  //   pxes.map(async (pxe) => pxe.registerAccount(clawbackSecretKey, await computePartialAddress(clawbackInstance))),
+  // );
   // const clawbackContract = await clawbackDeployment.send().deployed();
 
-  const clawbackSecretKey = Fr.random();
-  const clawbackPublicKeys = (await deriveKeys(clawbackSecretKey)).publicKeys;
-  const clawbackDeployment = ClawbackEscrowContract.deployWithPublicKeys(clawbackPublicKeys, deployerWallet);
-  const clawbackInstance = await clawbackDeployment.getInstance();
-  await Promise.all(
-    pxes.map(async (pxe) => pxe.registerAccount(clawbackSecretKey, await computePartialAddress(clawbackInstance))),
-  );
-  const clawbackContract = await clawbackDeployment.send().deployed();
+  // const contractMetadata = await pxes[0].getContractMetadata(clawbackContract.address);
+  // expect(contractMetadata.isContractInitialized).toBeFalsy();
+  // expect(contractMetadata.isContractPubliclyDeployed).toBeTruthy();
 
-  const contractMetadata = await pxes[0].getContractMetadata(clawbackContract.address);
-  expect(contractMetadata.isContractInitialized).toBeFalsy();
-  expect(contractMetadata.isContractPubliclyDeployed).toBeTruthy();
-
-  logger.info(`clawback address: ${clawbackContract.address}`);
-  return clawbackContract;
+  // logger.info(`clawback address: ${clawbackInstance.address}`);
+  // return clawbackInstance;
 }

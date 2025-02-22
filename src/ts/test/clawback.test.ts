@@ -7,7 +7,7 @@ import { createAccount } from '@aztec/accounts/testing';
 import { createPXE, deployClawbackEscrow, deployEscrow, expectTokenBalances, logger, wad } from './utils.js';
 import { deployToken } from './token.test.js';
 
-describe('Clawback Escrow - Multi PXE', () => {
+describe('ClawbackEscrow - Multi PXE', () => {
   let alicePXE: PXE;
   let bobPXE: PXE;
 
@@ -33,11 +33,24 @@ describe('Clawback Escrow - Multi PXE', () => {
     alice = aliceWallet;
     bob = bobWallet;
 
+    await alice.registerSender(bob.getAddress());
+    await bob.registerSender(alice.getAddress());
+
+    // TODO: For now we share Alice's secret with Bob.
+    await bobPXE.registerAccount(aliceWallet.getSecretKey(), alice.getCompleteAddress().partialAddress);
+    // await bobPXE.registerAccount( alice.getCompleteAddress().partialAddress);
+    // bobPXE.registerAccount(alice.getCompleteAddress().partialAddress);
+
+    // bob.setScopes([bob.getAddress(), alice.getAddress(), escrow.address, clawback.address]);
+    // bob.setScopes([bob.getAddress(), alice.getAddress(), clawback.address, escrow.address]);
+
     console.log({
       alice: alice.getAddress(),
       bob: bob.getAddress(),
     });
   });
+
+  afterAll(async () => {});
 
   beforeEach(async () => {
     token = (await deployToken(alice)) as TokenContract;
@@ -54,18 +67,13 @@ describe('Clawback Escrow - Multi PXE', () => {
       await pxe.registerSender(escrow.address);
       await pxe.registerSender(token.address);
     }
+    bob.setScopes([bob.getAddress(), alice.getAddress(), clawback.address, escrow.address]);
+
     console.log({
       token: token.address,
       clawback: clawback.address,
       escrow: escrow.address,
     });
-
-    // TODO: For now we share Alice's secret with Bob.
-    await bobPXE.registerAccount(aliceWallet.getSecretKey(), alice.getCompleteAddress().partialAddress);
-    // await bobPXE.registerAccount( alice.getCompleteAddress().partialAddress);
-
-    // bob.setScopes([bob.getAddress(), alice.getAddress(), escrow.address, clawback.address]);
-    bob.setScopes([bob.getAddress(), alice.getAddress(), clawback.address, escrow.address]);
   });
 
   const expectClawbackNote = (note: UniqueNote, sender: AztecAddress, receiver: AztecAddress, escrow: AztecAddress) => {
@@ -75,7 +83,52 @@ describe('Clawback Escrow - Multi PXE', () => {
     expect(note.note.items[2]).toEqual(new Fr(escrow.toBigInt()));
   };
 
-  it('clawback ', async () => {
+  it('clawback', async () => {
+    let events, notes;
+
+    // mint to alice
+    await token
+      .withWallet(alice)
+      .methods.mint_to_private(alice.getAddress(), alice.getAddress(), wad(10))
+      .send()
+      .wait();
+
+    // fund escrow
+    await token
+      .withWallet(alice)
+      .methods.transfer_private_to_private(alice.getAddress(), escrow.address, wad(10), 0)
+      .send()
+      .wait();
+
+    // create the clawback escrow
+    let tx = await clawback
+      .withWallet(alice)
+      .methods.create_clawback_escrow(escrow.address, bob.getAddress())
+      .send()
+      .wait({ debug: true });
+
+    // sync notes for alice and bob
+    await clawback.withWallet(bob).methods.sync_notes().simulate({});
+    await clawback.withWallet(alice).methods.sync_notes().simulate({});
+
+    notes = await alice.getNotes({ contractAddress: clawback.address });
+    expect(notes.length).toBe(1);
+    expectClawbackNote(notes[0], alice.getAddress(), bob.getAddress(), escrow.address);
+
+    notes = await bob.getNotes({ contractAddress: clawback.address });
+    expect(notes.length).toBe(1);
+    expectClawbackNote(notes[0], alice.getAddress(), bob.getAddress(), escrow.address);
+
+    // todo : assert nullifier is pushed
+
+    // bob claims the escrow
+    await clawback.withWallet(bob).methods.claim(escrow.address, token.address, wad(10)).send().wait();
+
+    await expectTokenBalances(token, escrow.address, wad(0), wad(0));
+    await expectTokenBalances(token, bob.getAddress(), wad(0), wad(10), bobWallet);
+  }, 300_000);
+
+  it('withdraw', async () => {
     let events, notes;
 
     // mint to alice
