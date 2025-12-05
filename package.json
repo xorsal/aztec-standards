@@ -20,7 +20,9 @@
     "lint:prettier": "prettier '**/*.{js,ts}' --write",
     "bench": "NODE_NO_WARNINGS=1 aztec-benchmark --suffix _base",
     "ccc": "yarn clean && yarn compile && yarn codegen",
-    "generate-release-artifacts": "tsc artifacts/*.ts --outDir dist/ --skipLibCheck --target es2020 --module nodenext --moduleResolution nodenext --resolveJsonModule --declaration"
+    "generate-release-artifacts": "tsc artifacts/*.ts --outDir dist/ --skipLibCheck --target es2020 --module nodenext --moduleResolution nodenext --resolveJsonModule --declaration",
+    "cli": "tsx src/cli/index.ts",
+    "escrow": "tsx src/cli/index.ts"
   },
   "lint-staged": {
     "*.ts": "prettier --write -u"
@@ -37,10 +39,14 @@
     "@types/node": "22.5.1"
   },
   "devDependencies": {
+    "@inquirer/prompts": "^8.0.2",
     "@types/jest": "29.5.11",
     "@types/mocha": "10.0.6",
     "@types/node": "22.5.1",
+    "chalk": "^5.6.2",
+    "commander": "^14.0.2",
     "husky": "9.1.7",
+    "tsx": "^4.20.4",
     "jest": "29.7.0",
     "lint-staged": "15.4.3",
     "prettier": "3.4.2",
