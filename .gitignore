@@ -1,5 +1,6 @@
 node_modules
 target/
+docs/api/
 artifacts/
 export/
 dist/
