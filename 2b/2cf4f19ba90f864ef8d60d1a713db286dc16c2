@@ -1,0 +1,23 @@
+package.json
+  s_394a557b4e9ddf::t_6015e5147d5220 24-25
+docs/README.md
+  s_394a557b4e9ddf::t_abced362913ae4 18-31
+scripts/publish-docs.sh
+  s_394a557b4e9ddf::t_e2fc90c1881d10 1-41
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.10",
+  "base_commit_sha": "2b2cf4f19ba90f864ef8d60d1a713db286dc16c2",
+  "prompts": {},
+  "sessions": {
+    "s_394a557b4e9ddf": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "00685732-d867-4036-8055-e09406f8c4d4",
+        "model": "claude-opus-4-7"
+      },
+      "human_author": "xorsal <zorzal@wonderland.xyz>"
+    }
+  }
+}
