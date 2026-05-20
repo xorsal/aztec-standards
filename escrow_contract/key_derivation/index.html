@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../../styles.css">
+<script defer src="../../nargo_doc.js"></script>
+<title>Module key_derivation documentation</title>
+</head>
+<body>
+<div id="sidebar-toggle">
+<button id="sidebar-toggle-button"></button>
+<div id="sidebar-toggle-title">key_derivation</div>
+</div>
+<span id="main-contents">
+<nav class="sidebar">
+<h1><a href="../../index.html">aztec-standards</a></h1>
+<div><a href="../../all.html">All items</a></div>
+<h2 id="crate-name"><a href="../index.html">escrow_contract</a></h2>
+<div id="crate-version">0.0.0</div>
+<h2><a href="#mod">Module key_derivation</a></h2>
+<h3>Module items</h3>
+<ul class="sidebar-list">
+<li><a href="#re-exports">Re-exports</a></li>
+<li><a href="#functions">Functions</a></li>
+</ul>
+<h2>In crate key_derivation</h2>
+<h3>Contracts</h3><ul class="item-list">
+<li><a href="../Escrow/index.html">Escrow</a></div></li>
+</ul>
+<h3>Modules</h3><ul class="item-list">
+<li><a href="../key_derivation/index.html">key_derivation</a></div></li>
+<li><a href="../library/index.html">library</a></div></li>
+<li><a href="../test/index.html">test</a></div></li>
+<li><a href="../types/index.html">types</a></div></li>
+</ul>
+</nav>
+<main>
+<div><a href="../../index.html">aztec-standards</a> - <a href="../index.html">escrow_contract</a>::key_derivation</div>
+<h1>Module <span id="mod" class="module">key_derivation</span></h1>
+<h2 id="re-exports">Re-exports</h2><ul class="item-list">
+<li><div class="item-name"><code>pub use escrow_contract::types::master_secret_keys::<a href="../../escrow_contract/types/master_secret_keys/struct.MasterSecretKeys.html" class="struct">MasterSecretKeys</a>;</code></div></li>
+</ul>
+<h2 id="functions">Functions</h2><ul class="item-list">
+<li><div class="item-name"><a href="fn.derive_keys.html" class="fn">derive_keys</a></div><div class="item-description">Derive all four master secret keys at once from a secret key
+Optimized to serialize the secret key only once and reuse the buffer</div></li>
+<li><div class="item-name"><a href="fn.derive_master_incoming_viewing_secret_key.html" class="fn">derive_master_incoming_viewing_secret_key</a></div><div class="item-description">Derive master incoming viewing secret key (ivsk_m) from secret key</div></li>
+<li><div class="item-name"><a href="fn.derive_master_nullifier_hiding_key.html" class="fn">derive_master_nullifier_hiding_key</a></div><div class="item-description">Derive master nullifier hiding key (nhk_m) from secret key</div></li>
+<li><div class="item-name"><a href="fn.derive_master_outgoing_viewing_secret_key.html" class="fn">derive_master_outgoing_viewing_secret_key</a></div><div class="item-description">Derive master outgoing viewing secret key (ovsk_m) from secret key</div></li>
+<li><div class="item-name"><a href="fn.derive_master_tagging_secret_key.html" class="fn">derive_master_tagging_secret_key</a></div><div class="item-description">Derive master tagging secret key (tsk_m) from secret key</div></li>
+<li><div class="item-name"><a href="fn.master_secret_keys_to_public_keys.html" class="fn">master_secret_keys_to_public_keys</a></div><div class="item-description">@notice Derives public keys from master secret keys.
+@param master_secret_keys The master secret keys
+@return PublicKeys containing the derived public keys.</div></li>
+<li><div class="item-name"><a href="fn.secret_key_to_public_keys.html" class="fn">secret_key_to_public_keys</a></div><div class="item-description">@notice Derives public keys from a secret key (full pipeline: sk -&gt; msks -&gt; pks).
+@param secret_key The secret key
+@return PublicKeys containing the derived public keys.</div></li>
+</ul>
+</main>
+</span>
+</body>
+</html>

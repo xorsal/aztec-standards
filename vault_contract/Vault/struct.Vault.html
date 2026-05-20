@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../../styles.css">
+<script defer src="../../nargo_doc.js"></script>
+<title>Struct Vault documentation</title>
+</head>
+<body>
+<div id="sidebar-toggle">
+<button id="sidebar-toggle-button"></button>
+<div id="sidebar-toggle-title">Vault</div>
+</div>
+<span id="main-contents">
+<nav class="sidebar">
+<h1><a href="../../index.html">aztec-standards</a></h1>
+<div><a href="../../all.html">All items</a></div>
+<h2 id="crate-name"><a href="../index.html">vault_contract</a></h2>
+<div id="crate-version">0.0.0</div>
+<h2><a href="#struct">Struct Vault</a></h2>
+<h3>Fields</h3>
+<ul class="sidebar-list">
+<li><a href="#structfield.target_contract">target_contract</a></li>
+</ul>
+<h3>Methods</h3>
+<ul class="sidebar-list">
+<li><a href="#asset">asset</a></li>
+<li><a href="#at">at</a></li>
+<li><a href="#constructor">constructor</a></li>
+<li><a href="#convert_to_assets">convert_to_assets</a></li>
+<li><a href="#convert_to_shares">convert_to_shares</a></li>
+<li><a href="#deposit_private_to_private">deposit_private_to_private</a></li>
+<li><a href="#deposit_private_to_private_exact">deposit_private_to_private_exact</a></li>
+<li><a href="#deposit_private_to_public">deposit_private_to_public</a></li>
+<li><a href="#deposit_public_to_private">deposit_public_to_private</a></li>
+<li><a href="#deposit_public_to_private_exact">deposit_public_to_private_exact</a></li>
+<li><a href="#deposit_public_to_public">deposit_public_to_public</a></li>
+<li><a href="#get_vault_offset">get_vault_offset</a></li>
+<li><a href="#interface">interface</a></li>
+<li><a href="#issue_private_to_private_exact">issue_private_to_private_exact</a></li>
+<li><a href="#issue_private_to_public_exact">issue_private_to_public_exact</a></li>
+<li><a href="#issue_public_to_private">issue_public_to_private</a></li>
+<li><a href="#issue_public_to_public">issue_public_to_public</a></li>
+<li><a href="#max_deposit">max_deposit</a></li>
+<li><a href="#max_issue">max_issue</a></li>
+<li><a href="#max_redeem">max_redeem</a></li>
+<li><a href="#max_withdraw">max_withdraw</a></li>
+<li><a href="#preview_deposit">preview_deposit</a></li>
+<li><a href="#preview_issue">preview_issue</a></li>
+<li><a href="#preview_redeem">preview_redeem</a></li>
+<li><a href="#preview_withdraw">preview_withdraw</a></li>
+<li><a href="#redeem_private_to_private_exact">redeem_private_to_private_exact</a></li>
+<li><a href="#redeem_private_to_public">redeem_private_to_public</a></li>
+<li><a href="#redeem_public_to_private_exact">redeem_public_to_private_exact</a></li>
+<li><a href="#redeem_public_to_public">redeem_public_to_public</a></li>
+<li><a href="#set_shares_token">set_shares_token</a></li>
+<li><a href="#set_shares_token_with_initial_deposit">set_shares_token_with_initial_deposit</a></li>
+<li><a href="#settle_deposit_private_to_private_exact_internal">settle_deposit_private_to_private_exact_internal</a></li>
+<li><a href="#settle_deposit_private_to_private_internal">settle_deposit_private_to_private_internal</a></li>
+<li><a href="#settle_deposit_private_to_public_internal">settle_deposit_private_to_public_internal</a></li>
+<li><a href="#settle_deposit_public_to_private_exact_internal">settle_deposit_public_to_private_exact_internal</a></li>
+<li><a href="#settle_deposit_public_to_private_internal">settle_deposit_public_to_private_internal</a></li>
+<li><a href="#settle_issue_private_to_private_exact_internal">settle_issue_private_to_private_exact_internal</a></li>
+<li><a href="#settle_issue_private_to_public_exact_internal">settle_issue_private_to_public_exact_internal</a></li>
+<li><a href="#settle_issue_public_to_private_internal">settle_issue_public_to_private_internal</a></li>
+<li><a href="#settle_redeem_private_to_private_exact_internal">settle_redeem_private_to_private_exact_internal</a></li>
+<li><a href="#settle_redeem_private_to_public_internal">settle_redeem_private_to_public_internal</a></li>
+<li><a href="#settle_redeem_public_to_private_exact_internal">settle_redeem_public_to_private_exact_internal</a></li>
+<li><a href="#settle_withdraw_private_to_private_exact_internal">settle_withdraw_private_to_private_exact_internal</a></li>
+<li><a href="#settle_withdraw_private_to_private_internal">settle_withdraw_private_to_private_internal</a></li>
+<li><a href="#settle_withdraw_private_to_public_exact_internal">settle_withdraw_private_to_public_exact_internal</a></li>
+<li><a href="#settle_withdraw_public_to_private_internal">settle_withdraw_public_to_private_internal</a></li>
+<li><a href="#shares">shares</a></li>
+<li><a href="#storage_layout">storage_layout</a></li>
+<li><a href="#total_assets">total_assets</a></li>
+<li><a href="#withdraw_private_to_private">withdraw_private_to_private</a></li>
+<li><a href="#withdraw_private_to_private_exact">withdraw_private_to_private_exact</a></li>
+<li><a href="#withdraw_private_to_public_exact">withdraw_private_to_public_exact</a></li>
+<li><a href="#withdraw_public_to_private">withdraw_public_to_private</a></li>
+<li><a href="#withdraw_public_to_public">withdraw_public_to_public</a></li>
+</ul>
+<h2>In module Vault</h2>
+<h3>Structs</h3><ul class="item-list">
+<li><a href="struct.asset_abi.html">asset_abi</a></div></li>
+<li><a href="struct.asset_parameters.html">asset_parameters</a></div></li>
+<li><a href="struct.CallInternal.html">CallInternal</a></div></li>
+<li><a href="struct.CallSelf.html">CallSelf</a></div></li>
+<li><a href="struct.CallSelfStatic.html">CallSelfStatic</a></div></li>
+<li><a href="struct.constructor_abi.html">constructor_abi</a></div></li>
+<li><a href="struct.constructor_parameters.html">constructor_parameters</a></div></li>
+<li><a href="struct.convert_to_assets_abi.html">convert_to_assets_abi</a></div></li>
+<li><a href="struct.convert_to_assets_parameters.html">convert_to_assets_parameters</a></div></li>
+<li><a href="struct.convert_to_shares_abi.html">convert_to_shares_abi</a></div></li>
+<li><a href="struct.convert_to_shares_parameters.html">convert_to_shares_parameters</a></div></li>
+<li><a href="struct.deposit_private_to_private_abi.html">deposit_private_to_private_abi</a></div></li>
+<li><a href="struct.deposit_private_to_private_exact_abi.html">deposit_private_to_private_exact_abi</a></div></li>
+<li><a href="struct.deposit_private_to_private_exact_parameters.html">deposit_private_to_private_exact_parameters</a></div></li>
+<li><a href="struct.deposit_private_to_private_parameters.html">deposit_private_to_private_parameters</a></div></li>
+<li><a href="struct.deposit_private_to_public_abi.html">deposit_private_to_public_abi</a></div></li>
+<li><a href="struct.deposit_private_to_public_parameters.html">deposit_private_to_public_parameters</a></div></li>
+<li><a href="struct.deposit_public_to_private_abi.html">deposit_public_to_private_abi</a></div></li>
+<li><a href="struct.deposit_public_to_private_exact_abi.html">deposit_public_to_private_exact_abi</a></div></li>
+<li><a href="struct.deposit_public_to_private_exact_parameters.html">deposit_public_to_private_exact_parameters</a></div></li>
+<li><a href="struct.deposit_public_to_private_parameters.html">deposit_public_to_private_parameters</a></div></li>
+<li><a href="struct.deposit_public_to_public_abi.html">deposit_public_to_public_abi</a></div></li>
+<li><a href="struct.deposit_public_to_public_parameters.html">deposit_public_to_public_parameters</a></div></li>
+<li><a href="struct.EnqueueSelf.html">EnqueueSelf</a></div></li>
+<li><a href="struct.EnqueueSelfStatic.html">EnqueueSelfStatic</a></div></li>
+<li><a href="struct.get_vault_offset_abi.html">get_vault_offset_abi</a></div></li>
+<li><a href="struct.get_vault_offset_parameters.html">get_vault_offset_parameters</a></div></li>
+<li><a href="struct.issue_private_to_private_exact_abi.html">issue_private_to_private_exact_abi</a></div></li>
+<li><a href="struct.issue_private_to_private_exact_parameters.html">issue_private_to_private_exact_parameters</a></div></li>
+<li><a href="struct.issue_private_to_public_exact_abi.html">issue_private_to_public_exact_abi</a></div></li>
+<li><a href="struct.issue_private_to_public_exact_parameters.html">issue_private_to_public_exact_parameters</a></div></li>
+<li><a href="struct.issue_public_to_private_abi.html">issue_public_to_private_abi</a></div></li>
+<li><a href="struct.issue_public_to_private_parameters.html">issue_public_to_private_parameters</a></div></li>
+<li><a href="struct.issue_public_to_public_abi.html">issue_public_to_public_abi</a></div></li>
+<li><a href="struct.issue_public_to_public_parameters.html">issue_public_to_public_parameters</a></div></li>
+<li><a href="struct.max_deposit_abi.html">max_deposit_abi</a></div></li>
+<li><a href="struct.max_deposit_parameters.html">max_deposit_parameters</a></div></li>
+<li><a href="struct.max_issue_abi.html">max_issue_abi</a></div></li>
+<li><a href="struct.max_issue_parameters.html">max_issue_parameters</a></div></li>
+<li><a href="struct.max_redeem_abi.html">max_redeem_abi</a></div></li>
+<li><a href="struct.max_redeem_parameters.html">max_redeem_parameters</a></div></li>
+<li><a href="struct.max_withdraw_abi.html">max_withdraw_abi</a></div></li>
+<li><a href="struct.max_withdraw_parameters.html">max_withdraw_parameters</a></div></li>
+<li><a href="struct.offchain_receive_abi.html">offchain_receive_abi</a></div></li>
+<li><a href="struct.offchain_receive_parameters.html">offchain_receive_parameters</a></div></li>
+<li><a href="struct.preview_deposit_abi.html">preview_deposit_abi</a></div></li>
+<li><a href="struct.preview_deposit_parameters.html">preview_deposit_parameters</a></div></li>
+<li><a href="struct.preview_issue_abi.html">preview_issue_abi</a></div></li>
+<li><a href="struct.preview_issue_parameters.html">preview_issue_parameters</a></div></li>
+<li><a href="struct.preview_redeem_abi.html">preview_redeem_abi</a></div></li>
+<li><a href="struct.preview_redeem_parameters.html">preview_redeem_parameters</a></div></li>
+<li><a href="struct.preview_withdraw_abi.html">preview_withdraw_abi</a></div></li>
+<li><a href="struct.preview_withdraw_parameters.html">preview_withdraw_parameters</a></div></li>
+<li><a href="struct.redeem_private_to_private_exact_abi.html">redeem_private_to_private_exact_abi</a></div></li>
+<li><a href="struct.redeem_private_to_private_exact_parameters.html">redeem_private_to_private_exact_parameters</a></div></li>
+<li><a href="struct.redeem_private_to_public_abi.html">redeem_private_to_public_abi</a></div></li>
+<li><a href="struct.redeem_private_to_public_parameters.html">redeem_private_to_public_parameters</a></div></li>
+<li><a href="struct.redeem_public_to_private_exact_abi.html">redeem_public_to_private_exact_abi</a></div></li>
+<li><a href="struct.redeem_public_to_private_exact_parameters.html">redeem_public_to_private_exact_parameters</a></div></li>
+<li><a href="struct.redeem_public_to_public_abi.html">redeem_public_to_public_abi</a></div></li>
+<li><a href="struct.redeem_public_to_public_parameters.html">redeem_public_to_public_parameters</a></div></li>
+<li><a href="struct.set_shares_token_abi.html">set_shares_token_abi</a></div></li>
+<li><a href="struct.set_shares_token_parameters.html">set_shares_token_parameters</a></div></li>
+<li><a href="struct.set_shares_token_with_initial_deposit_abi.html">set_shares_token_with_initial_deposit_abi</a></div></li>
+<li><a href="struct.set_shares_token_with_initial_deposit_parameters.html">set_shares_token_with_initial_deposit_parameters</a></div></li>
+<li><a href="struct.settle_deposit_private_to_private_exact_internal_abi.html">settle_deposit_private_to_private_exact_internal_abi</a></div></li>
+<li><a href="struct.settle_deposit_private_to_private_exact_internal_parameters.html">settle_deposit_private_to_private_exact_internal_parameters</a></div></li>
+<li><a href="struct.settle_deposit_private_to_private_internal_abi.html">settle_deposit_private_to_private_internal_abi</a></div></li>
+<li><a href="struct.settle_deposit_private_to_private_internal_parameters.html">settle_deposit_private_to_private_internal_parameters</a></div></li>
+<li><a href="struct.settle_deposit_private_to_public_internal_abi.html">settle_deposit_private_to_public_internal_abi</a></div></li>
+<li><a href="struct.settle_deposit_private_to_public_internal_parameters.html">settle_deposit_private_to_public_internal_parameters</a></div></li>
+<li><a href="struct.settle_deposit_public_to_private_exact_internal_abi.html">settle_deposit_public_to_private_exact_internal_abi</a></div></li>
+<li><a href="struct.settle_deposit_public_to_private_exact_internal_parameters.html">settle_deposit_public_to_private_exact_internal_parameters</a></div></li>
+<li><a href="struct.settle_deposit_public_to_private_internal_abi.html">settle_deposit_public_to_private_internal_abi</a></div></li>
+<li><a href="struct.settle_deposit_public_to_private_internal_parameters.html">settle_deposit_public_to_private_internal_parameters</a></div></li>
+<li><a href="struct.settle_issue_private_to_private_exact_internal_abi.html">settle_issue_private_to_private_exact_internal_abi</a></div></li>
+<li><a href="struct.settle_issue_private_to_private_exact_internal_parameters.html">settle_issue_private_to_private_exact_internal_parameters</a></div></li>
+<li><a href="struct.settle_issue_private_to_public_exact_internal_abi.html">settle_issue_private_to_public_exact_internal_abi</a></div></li>
+<li><a href="struct.settle_issue_private_to_public_exact_internal_parameters.html">settle_issue_private_to_public_exact_internal_parameters</a></div></li>
+<li><a href="struct.settle_issue_public_to_private_internal_abi.html">settle_issue_public_to_private_internal_abi</a></div></li>
+<li><a href="struct.settle_issue_public_to_private_internal_parameters.html">settle_issue_public_to_private_internal_parameters</a></div></li>
+<li><a href="struct.settle_redeem_private_to_private_exact_internal_abi.html">settle_redeem_private_to_private_exact_internal_abi</a></div></li>
+<li><a href="struct.settle_redeem_private_to_private_exact_internal_parameters.html">settle_redeem_private_to_private_exact_internal_parameters</a></div></li>
+<li><a href="struct.settle_redeem_private_to_public_internal_abi.html">settle_redeem_private_to_public_internal_abi</a></div></li>
+<li><a href="struct.settle_redeem_private_to_public_internal_parameters.html">settle_redeem_private_to_public_internal_parameters</a></div></li>
+<li><a href="struct.settle_redeem_public_to_private_exact_internal_abi.html">settle_redeem_public_to_private_exact_internal_abi</a></div></li>
+<li><a href="struct.settle_redeem_public_to_private_exact_internal_parameters.html">settle_redeem_public_to_private_exact_internal_parameters</a></div></li>
+<li><a href="struct.settle_withdraw_private_to_private_exact_internal_abi.html">settle_withdraw_private_to_private_exact_internal_abi</a></div></li>
+<li><a href="struct.settle_withdraw_private_to_private_exact_internal_parameters.html">settle_withdraw_private_to_private_exact_internal_parameters</a></div></li>
+<li><a href="struct.settle_withdraw_private_to_private_internal_abi.html">settle_withdraw_private_to_private_internal_abi</a></div></li>
+<li><a href="struct.settle_withdraw_private_to_private_internal_parameters.html">settle_withdraw_private_to_private_internal_parameters</a></div></li>
+<li><a href="struct.settle_withdraw_private_to_public_exact_internal_abi.html">settle_withdraw_private_to_public_exact_internal_abi</a></div></li>
+<li><a href="struct.settle_withdraw_private_to_public_exact_internal_parameters.html">settle_withdraw_private_to_public_exact_internal_parameters</a></div></li>
+<li><a href="struct.settle_withdraw_public_to_private_internal_abi.html">settle_withdraw_public_to_private_internal_abi</a></div></li>
+<li><a href="struct.settle_withdraw_public_to_private_internal_parameters.html">settle_withdraw_public_to_private_internal_parameters</a></div></li>
+<li><a href="struct.shares_abi.html">shares_abi</a></div></li>
+<li><a href="struct.shares_parameters.html">shares_parameters</a></div></li>
+<li><a href="struct.StorageLayout.html">StorageLayout</a></div></li>
+<li><a href="struct.StorageLayoutFields.html">StorageLayoutFields</a></div></li>
+<li><a href="struct.sync_state_abi.html">sync_state_abi</a></div></li>
+<li><a href="struct.sync_state_parameters.html">sync_state_parameters</a></div></li>
+<li><a href="struct.total_assets_abi.html">total_assets_abi</a></div></li>
+<li><a href="struct.total_assets_parameters.html">total_assets_parameters</a></div></li>
+<li><a href="struct.Vault.html">Vault</a></div></li>
+<li><a href="struct.withdraw_private_to_private_abi.html">withdraw_private_to_private_abi</a></div></li>
+<li><a href="struct.withdraw_private_to_private_exact_abi.html">withdraw_private_to_private_exact_abi</a></div></li>
+<li><a href="struct.withdraw_private_to_private_exact_parameters.html">withdraw_private_to_private_exact_parameters</a></div></li>
+<li><a href="struct.withdraw_private_to_private_parameters.html">withdraw_private_to_private_parameters</a></div></li>
+<li><a href="struct.withdraw_private_to_public_exact_abi.html">withdraw_private_to_public_exact_abi</a></div></li>
+<li><a href="struct.withdraw_private_to_public_exact_parameters.html">withdraw_private_to_public_exact_parameters</a></div></li>
+<li><a href="struct.withdraw_public_to_private_abi.html">withdraw_public_to_private_abi</a></div></li>
+<li><a href="struct.withdraw_public_to_private_parameters.html">withdraw_public_to_private_parameters</a></div></li>
+<li><a href="struct.withdraw_public_to_public_abi.html">withdraw_public_to_public_abi</a></div></li>
+<li><a href="struct.withdraw_public_to_public_parameters.html">withdraw_public_to_public_parameters</a></div></li>
+</ul>
+<h3>Functions</h3><ul class="item-list">
+<li><a href="fn.at.html">at</a></div></li>
+<li><a href="fn.interface.html">interface</a></div></li>
+<li><a href="fn.public_dispatch.html">public_dispatch</a></div></li>
+<li><a href="fn.storage_layout.html">storage_layout</a></div></li>
+</ul>
+<h3>Globals</h3><ul class="item-list">
+<li><a href="global.STORAGE_LAYOUT_Vault.html">STORAGE_LAYOUT_Vault</a></div></li>
+</ul>
+</nav>
+<main>
+<div><a href="../../index.html">aztec-standards</a> - <a href="../index.html">vault_contract</a>::<a href="index.html">Vault</a></div>
+<h1>Struct <span id="struct" class="struct">Vault</span></h1>
+<pre><code>pub struct Vault {
+    pub target_contract: <a href="../../protocol_types/address/aztec_address/struct.AztecAddress.html" class="struct">AztecAddress</a>,
+}
+</code></pre>
+<h2>Fields</h2>
+<div id="structfield.target_contract" class="struct-field"><code class="code-header">target_contract: <a href="../../protocol_types/address/aztec_address/struct.AztecAddress.html" class="struct">AztecAddress</a></code></div>
+<div class="padded-description"></div><h2>Implementations</h2>
+<h3><code class="code-header">impl <a href="../../vault_contract/Vault/struct.Vault.html" class="struct">Vault</a></code></h3>
+
+<div class="padded-methods"><code id="storage_layout" class="code-header">pub fn <a href="#storage_layout"><span class="fn">storage_layout</span></a>() -> StorageLayoutFields</code>
+
+<code id="at" class="code-header">pub fn <a href="#at"><span class="fn">at</span></a>(addr: <a href="../../protocol_types/address/aztec_address/struct.AztecAddress.html" class="struct">AztecAddress</a>) -> Self</code>
+
+<code id="interface" class="code-header">pub fn <a href="#interface"><span class="fn">interface</span></a>() -> Self</code>
+
+<code id="deposit_private_to_public" class="code-header">pub fn <a href="#deposit_private_to_public"><span class="fn">deposit_private_to_public</span></a>(
+    self,
+    from: <a href="../../protocol_types/address/aztec_address/struct.AztecAddress.html" class="struct">AztecAddress</a>,
+    to: <a href="../../protocol_types/address/aztec_address/struct.AztecAddress.html" class="struct">AztecAddress</a>,
+    assets: <a href="../../std/primitive.u128.html" class="primitive">u128</a>,
+    nonce: <a href="../../std/primitive.Field.html" class="primitive">Field</a>,
+) -> <a href="../../aztec/context/calls/struct.PrivateCall.html" class="struct">PrivateCall</a>&lt;25, 4, ()&gt;</code>
+
+<code id="settle_deposit_private_to_private_internal" class="code-header">pub fn <a href="#settle_deposit_private_to_private_internal"><span class="fn">settle_deposit_private_to_private_internal</span></a>(
+    self,
+    assets: <a href="../../std/primitive.u128.html" class="primitive">u128</a>,
+    shares: <a href="../../std/primitive.u128.html" class="primitive">u128</a>,
+) -> <a href="../../aztec/context/calls/struct.PublicCall.html" class="struct">PublicCall</a>&lt;42, 2, ()&gt;</code>
+
+<code id="settle_deposit_public_to_private_exact_internal" class="code-header">pub fn <a href="#settle_deposit_public_to_private_exact_internal"><span class="fn">settle_deposit_public_to_private_exact_internal</span></a>(
+    self,
+    from: <a href="../../protocol_types/address/aztec_address/struct.AztecAddress.html" class="struct">AztecAddress</a>,
+    commitment: <a href="../../std/primitive.Field.html" class="primitive">Field</a>,
+    assets: <a href="../../std/primitive.u128.html" class="primitive">u128</a>,
+    min_shares: <a href="../../std/primitive.u128.html" class="primitive">u128</a>,
+    nonce: <a href="../../std/primitive.Field.html" class="primitive">Field</a>,
+) -> <a href="../../aztec/context/calls/struct.PublicCall.html" class="struct">PublicCall</a>&lt;47, 5, ()&gt;</code>
+
+<code id="withdraw_public_to_private" class="code-header">pub fn <a href="#withdraw_public_to_private"><span class="fn">withdraw_public_to_private</span></a>(
+    self,
+    from: <a href="../../protocol_types/address/aztec_address/struct.AztecAddress.html" class="struct">AztecAddress</a>,
+    to: <a href="../../protocol_types/address/aztec_address/struct.AztecAddress.html" class="struct">AztecAddress</a>,
+    assets: <a href="../../std/primitive.u128.html" class="primitive">u128</a>,
+    nonce: <a href="../../std/primitive.Field.html" class="primitive">Field</a>,
+) -> <a href="../../aztec/context/calls/struct.PrivateCall.html" class="struct">PrivateCall</a>&lt;26, 4, ()&gt;</code>
+
+<code id="deposit_public_to_public" class="code-header">pub fn <a href="#deposit_public_to_public"><span class="fn">deposit_public_to_public</span></a>(
+    self,
+    from: <a href="../../protocol_types/address/aztec_address/struct.AztecAddress.html" class="struct">AztecAddress</a>,
+    to: <a href="../../protocol_types/address/aztec_address/struct.AztecAddress.html" class="struct">AztecAddress</a>,
+    assets: <a href="../../std/primitive.u128.html" class="primitive">u128</a>,
+    nonce: <a href="../../std/primitive.Field.html" class="primitive">Field</a>,
+) -> <a href="../../aztec/context/calls/struct.PublicCall.html" class="struct">PublicCall</a>&lt;24, 4, ()&gt;</code>
+
+<code id="withdraw_private_to_public_exact" class="code-header">pub fn <a href="#withdraw_private_to_public_exact"><span class="fn">withdraw_private_to_public_exact</span></a>(
+    self,
+    from: <a href="../../protocol_types/address/aztec_address/struct.AztecAddress.html" class="struct">AztecAddress</a>,
+    to: <a href="../../protocol_types/address/aztec_address/struct.AztecAddress.html" class="struct">AztecAddress</a>,
+    assets: <a href="../../std/primitive.u128.html" class="primitive">u128</a>,
+    max_shares: <a href="../../std/primitive.u128.html" class="primitive">u128</a>,
+    nonce: <a href="../../std/primitive.Field.html" class="primitive">Field</a>,
+) -> <a href="../../aztec/context/calls/struct.PrivateCall.html" class="struct">PrivateCall</a>&lt;32, 5, ()&gt;</code>
+
+<code id="preview_deposit" class="code-header">pub fn <a href="#preview_deposit"><span class="fn">preview_deposit</span></a>(self, assets: <a href="../../std/primitive.u128.html" class="primitive">u128</a>) -> <a href="../../aztec/context/calls/struct.PublicStaticCall.html" class="struct">PublicStaticCall</a>&lt;15, 1, <a href="../../std/primitive.u128.html" class="primitive">u128</a>&gt;</code>
+
+<code id="settle_redeem_private_to_public_internal" class="code-header">pub fn <a href="#settle_redeem_private_to_public_internal"><span class="fn">settle_redeem_private_to_public_internal</span></a>(
+    self,
+    to: <a href="../../protocol_types/address/aztec_address/struct.AztecAddress.html" class="struct">AztecAddress</a>,
+    shares: <a href="../../std/primitive.u128.html" class="primitive">u128</a>,
+) -> <a href="../../aztec/context/calls/struct.PublicCall.html" class="struct">PublicCall</a>&lt;40, 2, ()&gt;</code>
+
+<code id="issue_public_to_public" class="code-header">pub fn <a href="#issue_public_to_public"><span class="fn">issue_public_to_public</span></a>(
+    self,
+    from: <a href="../../protocol_types/address/aztec_address/struct.AztecAddress.html" class="struct">AztecAddress</a>,
+    to: <a href="../../protocol_types/address/aztec_address/struct.AztecAddress.html" class="struct">AztecAddress</a>,
+    shares: <a href="../../std/primitive.u128.html" class="primitive">u128</a>,
+    max_assets: <a href="../../std/primitive.u128.html" class="primitive">u128</a>,
+    nonce: <a href="../../std/primitive.Field.html" class="primitive">Field</a>,
+) -> <a href="../../aztec/context/calls/struct.PublicCall.html" class="struct">PublicCall</a>&lt;22, 5, ()&gt;</code>
+
+<code id="settle_withdraw_private_to_private_exact_internal" class="code-header">pub fn <a href="#settle_withdraw_private_to_private_exact_internal"><span class="fn">settle_withdraw_private_to_private_exact_internal</span></a>(
+    self,
+    commitment: <a href="../../std/primitive.Field.html" class="primitive">Field</a>,
+    assets: <a href="../../std/primitive.u128.html" class="primitive">u128</a>,
+    max_shares: <a href="../../std/primitive.u128.html" class="primitive">u128</a>,
+) -> <a href="../../aztec/context/calls/struct.PublicCall.html" class="struct">PublicCall</a>&lt;49, 3, ()&gt;</code>
+
+<code id="issue_public_to_private" class="code-header">pub fn <a href="#issue_public_to_private"><span class="fn">issue_public_to_private</span></a>(
+    self,
+    from: <a href="../../protocol_types/address/aztec_address/struct.AztecAddress.html" class="struct">AztecAddress</a>,
+    to: <a href="../../protocol_types/address/aztec_address/struct.AztecAddress.html" class="struct">AztecAddress</a>,
+    shares: <a href="../../std/primitive.u128.html" class="primitive">u128</a>,
+    max_assets: <a href="../../std/primitive.u128.html" class="primitive">u128</a>,
+    nonce: <a href="../../std/primitive.Field.html" class="primitive">Field</a>,
+) -> <a href="../../aztec/context/calls/struct.PrivateCall.html" class="struct">PrivateCall</a>&lt;23, 5, ()&gt;</code>
+
+<code id="shares" class="code-header">pub fn <a href="#shares"><span class="fn">shares</span></a>(self) -> <a href="../../aztec/context/calls/struct.PublicStaticCall.html" class="struct">PublicStaticCall</a>&lt;6, 0, <a href="../../protocol_types/address/aztec_address/struct.AztecAddress.html" class="struct">AztecAddress</a>&gt;</code>
+
+<code id="settle_issue_public_to_private_internal" class="code-header">pub fn <a href="#settle_issue_public_to_private_internal"><span class="fn">settle_issue_public_to_private_internal</span></a>(
+    self,
+    from: <a href="../../protocol_types/address/aztec_address/struct.AztecAddress.html" class="struct">AztecAddress</a>,
+    shares: <a href="../../std/primitive.u128.html" class="primitive">u128</a>,
+    max_assets: <a href="../../std/primitive.u128.html" class="primitive">u128</a>,
+) -> <a href="../../aztec/context/calls/struct.PublicCall.html" class="struct">PublicCall</a>&lt;39, 3, ()&gt;</code>
+
+<code id="max_deposit" class="code-header">pub fn <a href="#max_deposit"><span class="fn">max_deposit</span></a>(self, _receiver: <a href="../../protocol_types/address/aztec_address/struct.AztecAddress.html" class="struct">AztecAddress</a>) -> <a href="../../aztec/context/calls/struct.PublicStaticCall.html" class="struct">PublicStaticCall</a>&lt;11, 1, <a href="../../std/primitive.u128.html" class="primitive">u128</a>&gt;</code>
+
+<code id="issue_private_to_private_exact" class="code-header">pub fn <a href="#issue_private_to_private_exact"><span class="fn">issue_private_to_private_exact</span></a>(
+    self,
+    from: <a href="../../protocol_types/address/aztec_address/struct.AztecAddress.html" class="struct">AztecAddress</a>,
+    to: <a href="../../protocol_types/address/aztec_address/struct.AztecAddress.html" class="struct">AztecAddress</a>,
+    shares: <a href="../../std/primitive.u128.html" class="primitive">u128</a>,
+    max_assets: <a href="../../std/primitive.u128.html" class="primitive">u128</a>,
+    nonce: <a href="../../std/primitive.Field.html" class="primitive">Field</a>,
+) -> <a href="../../aztec/context/calls/struct.PrivateCall.html" class="struct">PrivateCall</a>&lt;30, 5, ()&gt;</code>
+
+<code id="redeem_private_to_private_exact" class="code-header">pub fn <a href="#redeem_private_to_private_exact"><span class="fn">redeem_private_to_private_exact</span></a>(
+    self,
+    from: <a href="../../protocol_types/address/aztec_address/struct.AztecAddress.html" class="struct">AztecAddress</a>,
+    to: <a href="../../protocol_types/address/aztec_address/struct.AztecAddress.html" class="struct">AztecAddress</a>,
+    shares: <a href="../../std/primitive.u128.html" class="primitive">u128</a>,
+    min_assets: <a href="../../std/primitive.u128.html" class="primitive">u128</a>,
+    nonce: <a href="../../std/primitive.Field.html" class="primitive">Field</a>,
+) -> <a href="../../aztec/context/calls/struct.PrivateCall.html" class="struct">PrivateCall</a>&lt;31, 5, ()&gt;</code>
+
+<code id="withdraw_public_to_public" class="code-header">pub fn <a href="#withdraw_public_to_public"><span class="fn">withdraw_public_to_public</span></a>(
+    self,
+    from: <a href="../../protocol_types/address/aztec_address/struct.AztecAddress.html" class="struct">AztecAddress</a>,
+    to: <a href="../../protocol_types/address/aztec_address/struct.AztecAddress.html" class="struct">AztecAddress</a>,
+    assets: <a href="../../std/primitive.u128.html" class="primitive">u128</a>,
+    nonce: <a href="../../std/primitive.Field.html" class="primitive">Field</a>,
+) -> <a href="../../aztec/context/calls/struct.PublicCall.html" class="struct">PublicCall</a>&lt;25, 4, ()&gt;</code>
+
+<code id="issue_private_to_public_exact" class="code-header">pub fn <a href="#issue_private_to_public_exact"><span class="fn">issue_private_to_public_exact</span></a>(
+    self,
+    from: <a href="../../protocol_types/address/aztec_address/struct.AztecAddress.html" class="struct">AztecAddress</a>,
+    to: <a href="../../protocol_types/address/aztec_address/struct.AztecAddress.html" class="struct">AztecAddress</a>,
+    shares: <a href="../../std/primitive.u128.html" class="primitive">u128</a>,
+    max_assets: <a href="../../std/primitive.u128.html" class="primitive">u128</a>,
+    nonce: <a href="../../std/primitive.Field.html" class="primitive">Field</a>,
+) -> <a href="../../aztec/context/calls/struct.PrivateCall.html" class="struct">PrivateCall</a>&lt;29, 5, ()&gt;</code>
+
+<code id="asset" class="code-header">pub fn <a href="#asset"><span class="fn">asset</span></a>(self) -> <a href="../../aztec/context/calls/struct.PublicStaticCall.html" class="struct">PublicStaticCall</a>&lt;5, 0, <a href="../../protocol_types/address/aztec_address/struct.AztecAddress.html" class="struct">AztecAddress</a>&gt;</code>
+
+<code id="deposit_private_to_private_exact" class="code-header">pub fn <a href="#deposit_private_to_private_exact"><span class="fn">deposit_private_to_private_exact</span></a>(
+    self,
+    from: <a href="../../protocol_types/address/aztec_address/struct.AztecAddress.html" class="struct">AztecAddress</a>,
+    to: <a href="../../protocol_types/address/aztec_address/struct.AztecAddress.html" class="struct">AztecAddress</a>,
+    assets: <a href="../../std/primitive.u128.html" class="primitive">u128</a>,
+    min_shares: <a href="../../std/primitive.u128.html" class="primitive">u128</a>,
+    nonce: <a href="../../std/primitive.Field.html" class="primitive">Field</a>,
+) -> <a href="../../aztec/context/calls/struct.PrivateCall.html" class="struct">PrivateCall</a>&lt;32, 5, ()&gt;</code>
+
+<code id="max_withdraw" class="code-header">pub fn <a href="#max_withdraw"><span class="fn">max_withdraw</span></a>(self, owner: <a href="../../protocol_types/address/aztec_address/struct.AztecAddress.html" class="struct">AztecAddress</a>) -> <a href="../../aztec/context/calls/struct.PublicStaticCall.html" class="struct">PublicStaticCall</a>&lt;12, 1, <a href="../../std/primitive.u128.html" class="primitive">u128</a>&gt;</code>
+
+<code id="settle_withdraw_public_to_private_internal" class="code-header">pub fn <a href="#settle_withdraw_public_to_private_internal"><span class="fn">settle_withdraw_public_to_private_internal</span></a>(
+    self,
+    from: <a href="../../protocol_types/address/aztec_address/struct.AztecAddress.html" class="struct">AztecAddress</a>,
+    assets: <a href="../../std/primitive.u128.html" class="primitive">u128</a>,
+    nonce: <a href="../../std/primitive.Field.html" class="primitive">Field</a>,
+) -> <a href="../../aztec/context/calls/struct.PublicCall.html" class="struct">PublicCall</a>&lt;42, 3, ()&gt;</code>
+
+<code id="deposit_public_to_private_exact" class="code-header">pub fn <a href="#deposit_public_to_private_exact"><span class="fn">deposit_public_to_private_exact</span></a>(
+    self,
+    from: <a href="../../protocol_types/address/aztec_address/struct.AztecAddress.html" class="struct">AztecAddress</a>,
+    to: <a href="../../protocol_types/address/aztec_address/struct.AztecAddress.html" class="struct">AztecAddress</a>,
+    assets: <a href="../../std/primitive.u128.html" class="primitive">u128</a>,
+    min_shares: <a href="../../std/primitive.u128.html" class="primitive">u128</a>,
+    nonce: <a href="../../std/primitive.Field.html" class="primitive">Field</a>,
+) -> <a href="../../aztec/context/calls/struct.PrivateCall.html" class="struct">PrivateCall</a>&lt;31, 5, ()&gt;</code>
+
+<code id="settle_deposit_private_to_public_internal" class="code-header">pub fn <a href="#settle_deposit_private_to_public_internal"><span class="fn">settle_deposit_private_to_public_internal</span></a>(
+    self,
+    to: <a href="../../protocol_types/address/aztec_address/struct.AztecAddress.html" class="struct">AztecAddress</a>,
+    assets: <a href="../../std/primitive.u128.html" class="primitive">u128</a>,
+) -> <a href="../../aztec/context/calls/struct.PublicCall.html" class="struct">PublicCall</a>&lt;41, 2, ()&gt;</code>
+
+<code id="settle_withdraw_private_to_public_exact_internal" class="code-header">pub fn <a href="#settle_withdraw_private_to_public_exact_internal"><span class="fn">settle_withdraw_private_to_public_exact_internal</span></a>(
+    self,
+    commitment: <a href="../../std/primitive.Field.html" class="primitive">Field</a>,
+    assets: <a href="../../std/primitive.u128.html" class="primitive">u128</a>,
+    max_shares: <a href="../../std/primitive.u128.html" class="primitive">u128</a>,
+    to: <a href="../../protocol_types/address/aztec_address/struct.AztecAddress.html" class="struct">AztecAddress</a>,
+) -> <a href="../../aztec/context/calls/struct.PublicCall.html" class="struct">PublicCall</a>&lt;48, 4, ()&gt;</code>
+
+<code id="settle_issue_private_to_private_exact_internal" class="code-header">pub fn <a href="#settle_issue_private_to_private_exact_internal"><span class="fn">settle_issue_private_to_private_exact_internal</span></a>(
+    self,
+    asset_commitment: <a href="../../std/primitive.Field.html" class="primitive">Field</a>,
+    shares: <a href="../../std/primitive.u128.html" class="primitive">u128</a>,
+    max_assets: <a href="../../std/primitive.u128.html" class="primitive">u128</a>,
+) -> <a href="../../aztec/context/calls/struct.PublicCall.html" class="struct">PublicCall</a>&lt;46, 3, ()&gt;</code>
+
+<code id="withdraw_private_to_private_exact" class="code-header">pub fn <a href="#withdraw_private_to_private_exact"><span class="fn">withdraw_private_to_private_exact</span></a>(
+    self,
+    from: <a href="../../protocol_types/address/aztec_address/struct.AztecAddress.html" class="struct">AztecAddress</a>,
+    to: <a href="../../protocol_types/address/aztec_address/struct.AztecAddress.html" class="struct">AztecAddress</a>,
+    assets: <a href="../../std/primitive.u128.html" class="primitive">u128</a>,
+    max_shares: <a href="../../std/primitive.u128.html" class="primitive">u128</a>,
+    nonce: <a href="../../std/primitive.Field.html" class="primitive">Field</a>,
+) -> <a href="../../aztec/context/calls/struct.PrivateCall.html" class="struct">PrivateCall</a>&lt;33, 5, ()&gt;</code>
+
+<code id="set_shares_token" class="code-header">pub fn <a href="#set_shares_token"><span class="fn">set_shares_token</span></a>(self, shares: <a href="../../protocol_types/address/aztec_address/struct.AztecAddress.html" class="struct">AztecAddress</a>) -> <a href="../../aztec/context/calls/struct.PublicCall.html" class="struct">PublicCall</a>&lt;16, 1, ()&gt;</code>
+
+<code id="redeem_public_to_public" class="code-header">pub fn <a href="#redeem_public_to_public"><span class="fn">redeem_public_to_public</span></a>(
+    self,
+    from: <a href="../../protocol_types/address/aztec_address/struct.AztecAddress.html" class="struct">AztecAddress</a>,
+    to: <a href="../../protocol_types/address/aztec_address/struct.AztecAddress.html" class="struct">AztecAddress</a>,
+    shares: <a href="../../std/primitive.u128.html" class="primitive">u128</a>,
+    nonce: <a href="../../std/primitive.Field.html" class="primitive">Field</a>,
+) -> <a href="../../aztec/context/calls/struct.PublicCall.html" class="struct">PublicCall</a>&lt;23, 4, ()&gt;</code>
+
+<code id="settle_redeem_private_to_private_exact_internal" class="code-header">pub fn <a href="#settle_redeem_private_to_private_exact_internal"><span class="fn">settle_redeem_private_to_private_exact_internal</span></a>(
+    self,
+    asset_commitment: <a href="../../std/primitive.Field.html" class="primitive">Field</a>,
+    shares: <a href="../../std/primitive.u128.html" class="primitive">u128</a>,
+    min_assets: <a href="../../std/primitive.u128.html" class="primitive">u128</a>,
+) -> <a href="../../aztec/context/calls/struct.PublicCall.html" class="struct">PublicCall</a>&lt;47, 3, ()&gt;</code>
+
+<code id="redeem_private_to_public" class="code-header">pub fn <a href="#redeem_private_to_public"><span class="fn">redeem_private_to_public</span></a>(
+    self,
+    from: <a href="../../protocol_types/address/aztec_address/struct.AztecAddress.html" class="struct">AztecAddress</a>,
+    to: <a href="../../protocol_types/address/aztec_address/struct.AztecAddress.html" class="struct">AztecAddress</a>,
+    shares: <a href="../../std/primitive.u128.html" class="primitive">u128</a>,
+    nonce: <a href="../../std/primitive.Field.html" class="primitive">Field</a>,
+) -> <a href="../../aztec/context/calls/struct.PrivateCall.html" class="struct">PrivateCall</a>&lt;24, 4, ()&gt;</code>
+
+<code id="convert_to_assets" class="code-header">pub fn <a href="#convert_to_assets"><span class="fn">convert_to_assets</span></a>(self, shares: <a href="../../std/primitive.u128.html" class="primitive">u128</a>) -> <a href="../../aztec/context/calls/struct.PublicStaticCall.html" class="struct">PublicStaticCall</a>&lt;17, 1, <a href="../../std/primitive.u128.html" class="primitive">u128</a>&gt;</code>
+
+<code id="max_redeem" class="code-header">pub fn <a href="#max_redeem"><span class="fn">max_redeem</span></a>(self, owner: <a href="../../protocol_types/address/aztec_address/struct.AztecAddress.html" class="struct">AztecAddress</a>) -> <a href="../../aztec/context/calls/struct.PublicStaticCall.html" class="struct">PublicStaticCall</a>&lt;10, 1, <a href="../../std/primitive.u128.html" class="primitive">u128</a>&gt;</code>
+
+<code id="constructor" class="code-header">pub fn <a href="#constructor"><span class="fn">constructor</span></a>(
+    self,
+    asset: <a href="../../protocol_types/address/aztec_address/struct.AztecAddress.html" class="struct">AztecAddress</a>,
+    vault_offset: <a href="../../std/primitive.u128.html" class="primitive">u128</a>,
+) -> <a href="../../aztec/context/calls/struct.PublicCall.html" class="struct">PublicCall</a>&lt;11, 2, ()&gt;</code>
+
+<code id="preview_withdraw" class="code-header">pub fn <a href="#preview_withdraw"><span class="fn">preview_withdraw</span></a>(self, assets: <a href="../../std/primitive.u128.html" class="primitive">u128</a>) -> <a href="../../aztec/context/calls/struct.PublicStaticCall.html" class="struct">PublicStaticCall</a>&lt;16, 1, <a href="../../std/primitive.u128.html" class="primitive">u128</a>&gt;</code>
+
+<code id="withdraw_private_to_private" class="code-header">pub fn <a href="#withdraw_private_to_private"><span class="fn">withdraw_private_to_private</span></a>(
+    self,
+    from: <a href="../../protocol_types/address/aztec_address/struct.AztecAddress.html" class="struct">AztecAddress</a>,
+    to: <a href="../../protocol_types/address/aztec_address/struct.AztecAddress.html" class="struct">AztecAddress</a>,
+    assets: <a href="../../std/primitive.u128.html" class="primitive">u128</a>,
+    shares: <a href="../../std/primitive.u128.html" class="primitive">u128</a>,
+    nonce: <a href="../../std/primitive.Field.html" class="primitive">Field</a>,
+) -> <a href="../../aztec/context/calls/struct.PrivateCall.html" class="struct">PrivateCall</a>&lt;27, 5, ()&gt;</code>
+
+<code id="settle_withdraw_private_to_private_internal" class="code-header">pub fn <a href="#settle_withdraw_private_to_private_internal"><span class="fn">settle_withdraw_private_to_private_internal</span></a>(
+    self,
+    assets: <a href="../../std/primitive.u128.html" class="primitive">u128</a>,
+    shares: <a href="../../std/primitive.u128.html" class="primitive">u128</a>,
+) -> <a href="../../aztec/context/calls/struct.PublicCall.html" class="struct">PublicCall</a>&lt;43, 2, ()&gt;</code>
+
+<code id="get_vault_offset" class="code-header">pub fn <a href="#get_vault_offset"><span class="fn">get_vault_offset</span></a>(self) -> <a href="../../aztec/context/calls/struct.PublicStaticCall.html" class="struct">PublicStaticCall</a>&lt;16, 0, <a href="../../std/primitive.u128.html" class="primitive">u128</a>&gt;</code>
+
+<code id="deposit_private_to_private" class="code-header">pub fn <a href="#deposit_private_to_private"><span class="fn">deposit_private_to_private</span></a>(
+    self,
+    from: <a href="../../protocol_types/address/aztec_address/struct.AztecAddress.html" class="struct">AztecAddress</a>,
+    to: <a href="../../protocol_types/address/aztec_address/struct.AztecAddress.html" class="struct">AztecAddress</a>,
+    assets: <a href="../../std/primitive.u128.html" class="primitive">u128</a>,
+    shares: <a href="../../std/primitive.u128.html" class="primitive">u128</a>,
+    nonce: <a href="../../std/primitive.Field.html" class="primitive">Field</a>,
+) -> <a href="../../aztec/context/calls/struct.PrivateCall.html" class="struct">PrivateCall</a>&lt;26, 5, ()&gt;</code>
+
+<code id="set_shares_token_with_initial_deposit" class="code-header">pub fn <a href="#set_shares_token_with_initial_deposit"><span class="fn">set_shares_token_with_initial_deposit</span></a>(
+    self,
+    shares: <a href="../../protocol_types/address/aztec_address/struct.AztecAddress.html" class="struct">AztecAddress</a>,
+    initial_deposit: <a href="../../std/primitive.u128.html" class="primitive">u128</a>,
+    depositor: <a href="../../protocol_types/address/aztec_address/struct.AztecAddress.html" class="struct">AztecAddress</a>,
+    nonce: <a href="../../std/primitive.Field.html" class="primitive">Field</a>,
+) -> <a href="../../aztec/context/calls/struct.PublicCall.html" class="struct">PublicCall</a>&lt;37, 4, ()&gt;</code>
+
+<code id="convert_to_shares" class="code-header">pub fn <a href="#convert_to_shares"><span class="fn">convert_to_shares</span></a>(self, assets: <a href="../../std/primitive.u128.html" class="primitive">u128</a>) -> <a href="../../aztec/context/calls/struct.PublicStaticCall.html" class="struct">PublicStaticCall</a>&lt;17, 1, <a href="../../std/primitive.u128.html" class="primitive">u128</a>&gt;</code>
+
+<code id="preview_issue" class="code-header">pub fn <a href="#preview_issue"><span class="fn">preview_issue</span></a>(self, shares: <a href="../../std/primitive.u128.html" class="primitive">u128</a>) -> <a href="../../aztec/context/calls/struct.PublicStaticCall.html" class="struct">PublicStaticCall</a>&lt;13, 1, <a href="../../std/primitive.u128.html" class="primitive">u128</a>&gt;</code>
+
+<code id="preview_redeem" class="code-header">pub fn <a href="#preview_redeem"><span class="fn">preview_redeem</span></a>(self, shares: <a href="../../std/primitive.u128.html" class="primitive">u128</a>) -> <a href="../../aztec/context/calls/struct.PublicStaticCall.html" class="struct">PublicStaticCall</a>&lt;14, 1, <a href="../../std/primitive.u128.html" class="primitive">u128</a>&gt;</code>
+
+<code id="settle_deposit_public_to_private_internal" class="code-header">pub fn <a href="#settle_deposit_public_to_private_internal"><span class="fn">settle_deposit_public_to_private_internal</span></a>(
+    self,
+    from: <a href="../../protocol_types/address/aztec_address/struct.AztecAddress.html" class="struct">AztecAddress</a>,
+    assets: <a href="../../std/primitive.u128.html" class="primitive">u128</a>,
+    shares: <a href="../../std/primitive.u128.html" class="primitive">u128</a>,
+    nonce: <a href="../../std/primitive.Field.html" class="primitive">Field</a>,
+) -> <a href="../../aztec/context/calls/struct.PublicCall.html" class="struct">PublicCall</a>&lt;41, 4, ()&gt;</code>
+
+<code id="settle_deposit_private_to_private_exact_internal" class="code-header">pub fn <a href="#settle_deposit_private_to_private_exact_internal"><span class="fn">settle_deposit_private_to_private_exact_internal</span></a>(
+    self,
+    commitment: <a href="../../std/primitive.Field.html" class="primitive">Field</a>,
+    assets: <a href="../../std/primitive.u128.html" class="primitive">u128</a>,
+    min_shares: <a href="../../std/primitive.u128.html" class="primitive">u128</a>,
+) -> <a href="../../aztec/context/calls/struct.PublicCall.html" class="struct">PublicCall</a>&lt;48, 3, ()&gt;</code>
+
+<code id="settle_issue_private_to_public_exact_internal" class="code-header">pub fn <a href="#settle_issue_private_to_public_exact_internal"><span class="fn">settle_issue_private_to_public_exact_internal</span></a>(
+    self,
+    asset_commitment: <a href="../../std/primitive.Field.html" class="primitive">Field</a>,
+    shares: <a href="../../std/primitive.u128.html" class="primitive">u128</a>,
+    max_assets: <a href="../../std/primitive.u128.html" class="primitive">u128</a>,
+    to: <a href="../../protocol_types/address/aztec_address/struct.AztecAddress.html" class="struct">AztecAddress</a>,
+) -> <a href="../../aztec/context/calls/struct.PublicCall.html" class="struct">PublicCall</a>&lt;45, 4, ()&gt;</code>
+
+<code id="settle_redeem_public_to_private_exact_internal" class="code-header">pub fn <a href="#settle_redeem_public_to_private_exact_internal"><span class="fn">settle_redeem_public_to_private_exact_internal</span></a>(
+    self,
+    from: <a href="../../protocol_types/address/aztec_address/struct.AztecAddress.html" class="struct">AztecAddress</a>,
+    asset_commitment: <a href="../../std/primitive.Field.html" class="primitive">Field</a>,
+    shares: <a href="../../std/primitive.u128.html" class="primitive">u128</a>,
+    min_assets: <a href="../../std/primitive.u128.html" class="primitive">u128</a>,
+    nonce: <a href="../../std/primitive.Field.html" class="primitive">Field</a>,
+) -> <a href="../../aztec/context/calls/struct.PublicCall.html" class="struct">PublicCall</a>&lt;46, 5, ()&gt;</code>
+
+<code id="deposit_public_to_private" class="code-header">pub fn <a href="#deposit_public_to_private"><span class="fn">deposit_public_to_private</span></a>(
+    self,
+    from: <a href="../../protocol_types/address/aztec_address/struct.AztecAddress.html" class="struct">AztecAddress</a>,
+    to: <a href="../../protocol_types/address/aztec_address/struct.AztecAddress.html" class="struct">AztecAddress</a>,
+    assets: <a href="../../std/primitive.u128.html" class="primitive">u128</a>,
+    shares: <a href="../../std/primitive.u128.html" class="primitive">u128</a>,
+    nonce: <a href="../../std/primitive.Field.html" class="primitive">Field</a>,
+) -> <a href="../../aztec/context/calls/struct.PrivateCall.html" class="struct">PrivateCall</a>&lt;25, 5, ()&gt;</code>
+
+<code id="total_assets" class="code-header">pub fn <a href="#total_assets"><span class="fn">total_assets</span></a>(self) -> <a href="../../aztec/context/calls/struct.PublicStaticCall.html" class="struct">PublicStaticCall</a>&lt;12, 0, <a href="../../std/primitive.u128.html" class="primitive">u128</a>&gt;</code>
+
+<code id="redeem_public_to_private_exact" class="code-header">pub fn <a href="#redeem_public_to_private_exact"><span class="fn">redeem_public_to_private_exact</span></a>(
+    self,
+    from: <a href="../../protocol_types/address/aztec_address/struct.AztecAddress.html" class="struct">AztecAddress</a>,
+    to: <a href="../../protocol_types/address/aztec_address/struct.AztecAddress.html" class="struct">AztecAddress</a>,
+    shares: <a href="../../std/primitive.u128.html" class="primitive">u128</a>,
+    min_assets: <a href="../../std/primitive.u128.html" class="primitive">u128</a>,
+    nonce: <a href="../../std/primitive.Field.html" class="primitive">Field</a>,
+) -> <a href="../../aztec/context/calls/struct.PrivateCall.html" class="struct">PrivateCall</a>&lt;30, 5, ()&gt;</code>
+
+<code id="max_issue" class="code-header">pub fn <a href="#max_issue"><span class="fn">max_issue</span></a>(self, _receiver: <a href="../../protocol_types/address/aztec_address/struct.AztecAddress.html" class="struct">AztecAddress</a>) -> <a href="../../aztec/context/calls/struct.PublicStaticCall.html" class="struct">PublicStaticCall</a>&lt;9, 1, <a href="../../std/primitive.u128.html" class="primitive">u128</a>&gt;</code>
+
+</div></main>
+</span>
+</body>
+</html>

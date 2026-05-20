@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../../styles.css">
+<script defer src="../../nargo_doc.js"></script>
+<title>Contract VaultDeployer documentation</title>
+</head>
+<body>
+<div id="sidebar-toggle">
+<button id="sidebar-toggle-button"></button>
+<div id="sidebar-toggle-title">VaultDeployer</div>
+</div>
+<span id="main-contents">
+<nav class="sidebar">
+<h1><a href="../../index.html">aztec-standards</a></h1>
+<div><a href="../../all.html">All items</a></div>
+<h2 id="crate-name"><a href="../index.html">vault_deployer</a></h2>
+<div id="crate-version">0.0.0</div>
+<h2><a href="#mod">Contract VaultDeployer</a></h2>
+<h3>Contract items</h3>
+<ul class="sidebar-list">
+<li><a href="#structs">Structs</a></li>
+<li><a href="#functions">Functions</a></li>
+</ul>
+<h2>In crate VaultDeployer</h2>
+<h3>Contracts</h3><ul class="item-list">
+<li><a href="../VaultDeployer/index.html">VaultDeployer</a></div></li>
+</ul>
+</nav>
+<main>
+<div><a href="../../index.html">aztec-standards</a> - <a href="../index.html">vault_deployer</a>::VaultDeployer</div>
+<h1>Contract <span id="mod" class="module">VaultDeployer</span></h1>
+<div class="comments">
+<p>@title VaultDeployer
+@notice Atomically deploys a Vault + shares token pair when this contract instance is created.
+@dev Each pool deploys a new VaultDeployer instance whose initializer runs deploy_vault or
+deploy_vault_with_initial_deposit. The vault and shares addresses depend on this instance's
+address as deployer, so their preimage commits to the full parameter set (including shares
+class ID) through the deployer's initialization hash, unlike a reusable factory.</p>
+<pre><code> Computes both child addresses on-chain from class IDs, salts, and constructor args. Both
+ children use this deployer instance (non-universal deploy) so that:
+ 1. publish_contract_instance_for_public_execution passes the deployer check
+ 2. vault.set_shares_token passes the deployer == msg_sender check
+
+ The SDK must register the same instance preimages with the PXE before deploying this
+ contract so the get_contract_instance oracle can resolve them.
+</code></pre>
+</div>
+<h2 id="structs">Structs</h2><ul class="item-list">
+<li><div class="item-name"><a href="struct.CallInternal.html" class="struct">CallInternal</a></div><div class="item-description"></div></li>
+<li><div class="item-name"><a href="struct.CallSelf.html" class="struct">CallSelf</a></div><div class="item-description"></div></li>
+<li><div class="item-name"><a href="struct.CallSelfStatic.html" class="struct">CallSelfStatic</a></div><div class="item-description"></div></li>
+<li><div class="item-name"><a href="struct.deploy_vault_abi.html" class="struct">deploy_vault_abi</a></div><div class="item-description"></div></li>
+<li><div class="item-name"><a href="struct.deploy_vault_parameters.html" class="struct">deploy_vault_parameters</a></div><div class="item-description"></div></li>
+<li><div class="item-name"><a href="struct.deploy_vault_with_initial_deposit_abi.html" class="struct">deploy_vault_with_initial_deposit_abi</a></div><div class="item-description"></div></li>
+<li><div class="item-name"><a href="struct.deploy_vault_with_initial_deposit_parameters.html" class="struct">deploy_vault_with_initial_deposit_parameters</a></div><div class="item-description"></div></li>
+<li><div class="item-name"><a href="struct.EnqueueSelf.html" class="struct">EnqueueSelf</a></div><div class="item-description"></div></li>
+<li><div class="item-name"><a href="struct.EnqueueSelfStatic.html" class="struct">EnqueueSelfStatic</a></div><div class="item-description"></div></li>
+<li><div class="item-name"><a href="struct.offchain_receive_abi.html" class="struct">offchain_receive_abi</a></div><div class="item-description"></div></li>
+<li><div class="item-name"><a href="struct.offchain_receive_parameters.html" class="struct">offchain_receive_parameters</a></div><div class="item-description"></div></li>
+<li><div class="item-name"><a href="struct.sync_state_abi.html" class="struct">sync_state_abi</a></div><div class="item-description"></div></li>
+<li><div class="item-name"><a href="struct.sync_state_parameters.html" class="struct">sync_state_parameters</a></div><div class="item-description"></div></li>
+<li><div class="item-name"><a href="struct.VaultDeployer.html" class="struct">VaultDeployer</a></div><div class="item-description"></div></li>
+</ul>
+<h2 id="functions">Functions</h2><ul class="item-list">
+<li><div class="item-name"><a href="fn.at.html" class="fn">at</a></div><div class="item-description"></div></li>
+<li><div class="item-name"><a href="fn.interface.html" class="fn">interface</a></div><div class="item-description"></div></li>
+</ul>
+</main>
+</span>
+</body>
+</html>

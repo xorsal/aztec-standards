@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../styles.css">
+<script defer src="../nargo_doc.js"></script>
+<title>Crate vault_deployer documentation</title>
+</head>
+<body>
+<div id="sidebar-toggle">
+<button id="sidebar-toggle-button"></button>
+<div id="sidebar-toggle-title">vault_deployer</div>
+</div>
+<span id="main-contents">
+<nav class="sidebar">
+<h1><a href="../index.html">aztec-standards</a></h1>
+<div><a href="../all.html">All items</a></div>
+<h2 id="crate-name"><a href="index.html">vault_deployer</a></h2>
+<div id="crate-version">0.0.0</div>
+<h3>Crate items</h3>
+<ul class="sidebar-list">
+<li><a href="#contracts">Contracts</a></li>
+</ul>
+<h3>Crates</h3>
+<ul class="sidebar-list">
+<li><a href="../token_contract/index.html">token_contract</a></li>
+<li><a href="../vault_contract/index.html">vault_contract</a></li>
+<li><a href="../vault_deployer/index.html">vault_deployer</a></li>
+<li><a href="../dripper/index.html">dripper</a></li>
+<li><a href="../nft_contract/index.html">nft_contract</a></li>
+<li><a href="../escrow_contract/index.html">escrow_contract</a></li>
+<li><a href="../generic_proxy/index.html">generic_proxy</a></li>
+</ul>
+</nav>
+<main>
+<div><a href="../index.html">aztec-standards</a> - vault_deployer</div>
+<h1>Crate <span class="crate">vault_deployer</span></h1>
+<h2 id="contracts">Contracts</h2><ul class="item-list">
+<li><div class="item-name"><a href="VaultDeployer/index.html" class="module">VaultDeployer</a></div><div class="item-description">@title VaultDeployer
+@notice Atomically deploys a Vault + shares token pair when this contract instance is created.
+@dev Each pool deploys a new VaultDeployer instance whose initializer runs deploy_vault or
+deploy_vault_with_initial_deposit. The vault and shares addresses depend on this instance's
+address as deployer, so their preimage commits to the full parameter set (including shares
+class ID) through the deployer's initialization hash, unlike a reusable factory.</div></li>
+</ul>
+</main>
+</span>
+</body>
+</html>

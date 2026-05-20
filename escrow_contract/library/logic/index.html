@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../../../styles.css">
+<script defer src="../../../nargo_doc.js"></script>
+<title>Module logic documentation</title>
+</head>
+<body>
+<div id="sidebar-toggle">
+<button id="sidebar-toggle-button"></button>
+<div id="sidebar-toggle-title">logic</div>
+</div>
+<span id="main-contents">
+<nav class="sidebar">
+<h1><a href="../../../index.html">aztec-standards</a></h1>
+<div><a href="../../../all.html">All items</a></div>
+<h2 id="crate-name"><a href="../../index.html">escrow_contract</a></h2>
+<div id="crate-version">0.0.0</div>
+<h2><a href="#mod">Module logic</a></h2>
+<h3>Module items</h3>
+<ul class="sidebar-list">
+<li><a href="#re-exports">Re-exports</a></li>
+<li><a href="#functions">Functions</a></li>
+</ul>
+<h2>In module library</h2>
+<h3>Modules</h3><ul class="item-list">
+<li><a href="../logic/index.html">logic</a></div></li>
+</ul>
+</nav>
+<main>
+<div><a href="../../../index.html">aztec-standards</a> - <a href="../../index.html">escrow_contract</a>::<a href="../index.html">library</a>::logic</div>
+<h1>Module <span id="mod" class="module">logic</span></h1>
+<h2 id="re-exports">Re-exports</h2><ul class="item-list">
+<li><div class="item-name"><code>pub use escrow_contract::types::escrow_details_event::<a href="../../../escrow_contract/types/escrow_details_event/struct.EscrowDetailsLogContent.html" class="struct">EscrowDetailsLogContent</a>;</code></div></li>
+</ul>
+<h2 id="functions">Functions</h2><ul class="item-list">
+<li><div class="item-name"><a href="fn._get_escrow.html" class="fn">_get_escrow</a></div><div class="item-description"><h1>==========================================================
+=================== LOGIC LIBRARIES =======================</h1>
+<p>@notice Returns the escrow address that corresponds to the given secret key and class ID.
+@param context The private context
+@param escrow_class_id The contract class id of the escrow contract
+@param secret_key The secret key used to derive master secret keys and public keys
+@return The escrow address</div></li>
+<li><div class="item-name"><a href="fn._share_escrow.html" class="fn">_share_escrow</a></div><div class="item-description">@notice Shares the escrow details needed to find and use the escrow contract
+@dev Emits a private log with the escrow details
+@param context The private context
+@param account The address of the account that will use the escrow
+@param escrow The address of the escrow
+@param secret_key The secret key used to derive master secret keys and public keys</div></li>
+<li><div class="item-name"><a href="fn._withdraw.html" class="fn">_withdraw</a></div><div class="item-description">@notice Withdraws an amount of tokens from the provided escrow.
+@param context The private context
+@param escrow The address of the escrow
+@param account The address of the account that will receive the tokens
+@param token The address of the token
+@param amount The amount of tokens to withdraw from the escrow</div></li>
+<li><div class="item-name"><a href="fn._withdraw_nft.html" class="fn">_withdraw_nft</a></div><div class="item-description">@notice Withdraws an NFT from the provided escrow.
+@param context The private context
+@param escrow The address of the escrow
+@param account The address of the account that will receive the NFT
+@param nft The address of the NFT contract
+@param token_id The id of the token to withdraw from the escrow</div></li>
+</ul>
+</main>
+</span>
+</body>
+</html>

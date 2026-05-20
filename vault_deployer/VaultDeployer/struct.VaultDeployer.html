@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../../styles.css">
+<script defer src="../../nargo_doc.js"></script>
+<title>Struct VaultDeployer documentation</title>
+</head>
+<body>
+<div id="sidebar-toggle">
+<button id="sidebar-toggle-button"></button>
+<div id="sidebar-toggle-title">VaultDeployer</div>
+</div>
+<span id="main-contents">
+<nav class="sidebar">
+<h1><a href="../../index.html">aztec-standards</a></h1>
+<div><a href="../../all.html">All items</a></div>
+<h2 id="crate-name"><a href="../index.html">vault_deployer</a></h2>
+<div id="crate-version">0.0.0</div>
+<h2><a href="#struct">Struct VaultDeployer</a></h2>
+<h3>Fields</h3>
+<ul class="sidebar-list">
+<li><a href="#structfield.target_contract">target_contract</a></li>
+</ul>
+<h3>Methods</h3>
+<ul class="sidebar-list">
+<li><a href="#at">at</a></li>
+<li><a href="#deploy_vault">deploy_vault</a></li>
+<li><a href="#deploy_vault_with_initial_deposit">deploy_vault_with_initial_deposit</a></li>
+<li><a href="#interface">interface</a></li>
+</ul>
+<h2>In module VaultDeployer</h2>
+<h3>Structs</h3><ul class="item-list">
+<li><a href="struct.CallInternal.html">CallInternal</a></div></li>
+<li><a href="struct.CallSelf.html">CallSelf</a></div></li>
+<li><a href="struct.CallSelfStatic.html">CallSelfStatic</a></div></li>
+<li><a href="struct.deploy_vault_abi.html">deploy_vault_abi</a></div></li>
+<li><a href="struct.deploy_vault_parameters.html">deploy_vault_parameters</a></div></li>
+<li><a href="struct.deploy_vault_with_initial_deposit_abi.html">deploy_vault_with_initial_deposit_abi</a></div></li>
+<li><a href="struct.deploy_vault_with_initial_deposit_parameters.html">deploy_vault_with_initial_deposit_parameters</a></div></li>
+<li><a href="struct.EnqueueSelf.html">EnqueueSelf</a></div></li>
+<li><a href="struct.EnqueueSelfStatic.html">EnqueueSelfStatic</a></div></li>
+<li><a href="struct.offchain_receive_abi.html">offchain_receive_abi</a></div></li>
+<li><a href="struct.offchain_receive_parameters.html">offchain_receive_parameters</a></div></li>
+<li><a href="struct.sync_state_abi.html">sync_state_abi</a></div></li>
+<li><a href="struct.sync_state_parameters.html">sync_state_parameters</a></div></li>
+<li><a href="struct.VaultDeployer.html">VaultDeployer</a></div></li>
+</ul>
+<h3>Functions</h3><ul class="item-list">
+<li><a href="fn.at.html">at</a></div></li>
+<li><a href="fn.interface.html">interface</a></div></li>
+</ul>
+</nav>
+<main>
+<div><a href="../../index.html">aztec-standards</a> - <a href="../index.html">vault_deployer</a>::<a href="index.html">VaultDeployer</a></div>
+<h1>Struct <span id="struct" class="struct">VaultDeployer</span></h1>
+<pre><code>pub struct VaultDeployer {
+    pub target_contract: <a href="../../protocol_types/address/aztec_address/struct.AztecAddress.html" class="struct">AztecAddress</a>,
+}
+</code></pre>
+<h2>Fields</h2>
+<div id="structfield.target_contract" class="struct-field"><code class="code-header">target_contract: <a href="../../protocol_types/address/aztec_address/struct.AztecAddress.html" class="struct">AztecAddress</a></code></div>
+<div class="padded-description"></div><h2>Implementations</h2>
+<h3><code class="code-header">impl <a href="../../vault_deployer/VaultDeployer/struct.VaultDeployer.html" class="struct">VaultDeployer</a></code></h3>
+
+<div class="padded-methods"><code id="at" class="code-header">pub fn <a href="#at"><span class="fn">at</span></a>(addr: <a href="../../protocol_types/address/aztec_address/struct.AztecAddress.html" class="struct">AztecAddress</a>) -> Self</code>
+
+<code id="interface" class="code-header">pub fn <a href="#interface"><span class="fn">interface</span></a>() -> Self</code>
+
+<code id="deploy_vault_with_initial_deposit" class="code-header">pub fn <a href="#deploy_vault_with_initial_deposit"><span class="fn">deploy_vault_with_initial_deposit</span></a>(
+    self,
+    asset: <a href="../../protocol_types/address/aztec_address/struct.AztecAddress.html" class="struct">AztecAddress</a>,
+    vault_offset: <a href="../../std/primitive.u128.html" class="primitive">u128</a>,
+    vault_class_id: <a href="../../protocol_types/contract_class_id/struct.ContractClassId.html" class="struct">ContractClassId</a>,
+    shares_name: <a href="../../std/primitive.str.html" class="primitive">str</a>&lt;31&gt;,
+    shares_symbol: <a href="../../std/primitive.str.html" class="primitive">str</a>&lt;31&gt;,
+    shares_decimals: <a href="../../std/primitive.u8.html" class="primitive">u8</a>,
+    shares_class_id: <a href="../../protocol_types/contract_class_id/struct.ContractClassId.html" class="struct">ContractClassId</a>,
+    initial_deposit: <a href="../../std/primitive.u128.html" class="primitive">u128</a>,
+    depositor: <a href="../../protocol_types/address/aztec_address/struct.AztecAddress.html" class="struct">AztecAddress</a>,
+    nonce: <a href="../../std/primitive.Field.html" class="primitive">Field</a>,
+) -> <a href="../../aztec/context/calls/struct.PrivateCall.html" class="struct">PrivateCall</a>&lt;33, 70, ()&gt;</code>
+
+<code id="deploy_vault" class="code-header">pub fn <a href="#deploy_vault"><span class="fn">deploy_vault</span></a>(
+    self,
+    asset: <a href="../../protocol_types/address/aztec_address/struct.AztecAddress.html" class="struct">AztecAddress</a>,
+    vault_offset: <a href="../../std/primitive.u128.html" class="primitive">u128</a>,
+    vault_class_id: <a href="../../protocol_types/contract_class_id/struct.ContractClassId.html" class="struct">ContractClassId</a>,
+    shares_name: <a href="../../std/primitive.str.html" class="primitive">str</a>&lt;31&gt;,
+    shares_symbol: <a href="../../std/primitive.str.html" class="primitive">str</a>&lt;31&gt;,
+    shares_decimals: <a href="../../std/primitive.u8.html" class="primitive">u8</a>,
+    shares_class_id: <a href="../../protocol_types/contract_class_id/struct.ContractClassId.html" class="struct">ContractClassId</a>,
+) -> <a href="../../aztec/context/calls/struct.PrivateCall.html" class="struct">PrivateCall</a>&lt;12, 67, ()&gt;</code>
+
+</div></main>
+</span>
+</body>
+</html>

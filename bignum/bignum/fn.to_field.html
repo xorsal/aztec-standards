@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../../styles.css">
+<script defer src="../../nargo_doc.js"></script>
+<title>Function to_field documentation</title>
+</head>
+<body>
+<div id="sidebar-toggle">
+<button id="sidebar-toggle-button"></button>
+<div id="sidebar-toggle-title">to_field</div>
+</div>
+<span id="main-contents">
+<nav class="sidebar">
+<h1><a href="../../index.html">aztec-standards</a></h1>
+<div><a href="../../all.html">All items</a></div>
+<h2 id="crate-name"><a href="../index.html">bignum</a></h2>
+<div id="crate-version">0.0.0</div>
+<h2>In module bignum</h2>
+<h3>Traits</h3><ul class="item-list">
+<li><a href="trait.BigNum.html">BigNum</a></div></li>
+</ul>
+<h3>Functions</h3><ul class="item-list">
+<li><a href="fn.batch_invert.html">batch_invert</a></div></li>
+<li><a href="fn.batch_invert_slice.html">batch_invert_slice</a></div></li>
+<li><a href="fn.compute_quadratic_expression.html">compute_quadratic_expression</a></div></li>
+<li><a href="fn.conditional_select.html">conditional_select</a></div></li>
+<li><a href="fn.derive_bignum.html">derive_bignum</a></div></li>
+<li><a href="fn.evaluate_quadratic_expression.html">evaluate_quadratic_expression</a></div></li>
+<li><a href="fn.to_field.html">to_field</a></div></li>
+</ul>
+</nav>
+<main>
+<div><a href="../../index.html">aztec-standards</a> - <a href="../index.html">bignum</a>::<a href="index.html">bignum</a></div>
+<h1>Function <span class="fn">to_field</span></h1>
+<pre><code>pub fn to_field&lt;T&gt;(bn: T) -> <a href="../../std/primitive.Field.html" class="primitive">Field</a>
+<div class="where-clause">where
+    T: <a href="../../bignum/bignum/trait.BigNum.html" class="trait">BigNum</a></div></code></pre>
+
+<div class="comments">
+<p>Converts a BigNum to a native circuit Field element.</p>
+<h2>Requirements</h2>
+<ul>
+<li>The BigNum value must be less than the circuit field modulus (Grumpkin: ~2^254)</li>
+<li>For N &gt; 2, the value is validated to be less than the Grumpkin modulus</li>
+</ul>
+<h2>Panics</h2>
+<ul>
+<li>Fails range validation if the value is &gt;= circuit field modulus</li>
+<li>Fails if limbs are not properly range-constrained</li>
+</ul>
+<h2>Note</h2>
+<p>This is a constrained operation that validates the BigNum is representable as a Field.
+For BigNums with <code>MOD_BITS &gt; 253</code>, ensure your value is actually less than the circuit
+field modulus before calling this.</p>
+</div>
+</main>
+</span>
+</body>
+</html>

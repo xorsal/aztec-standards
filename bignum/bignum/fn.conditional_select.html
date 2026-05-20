@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../../styles.css">
+<script defer src="../../nargo_doc.js"></script>
+<title>Function conditional_select documentation</title>
+</head>
+<body>
+<div id="sidebar-toggle">
+<button id="sidebar-toggle-button"></button>
+<div id="sidebar-toggle-title">conditional_select</div>
+</div>
+<span id="main-contents">
+<nav class="sidebar">
+<h1><a href="../../index.html">aztec-standards</a></h1>
+<div><a href="../../all.html">All items</a></div>
+<h2 id="crate-name"><a href="../index.html">bignum</a></h2>
+<div id="crate-version">0.0.0</div>
+<h2>In module bignum</h2>
+<h3>Traits</h3><ul class="item-list">
+<li><a href="trait.BigNum.html">BigNum</a></div></li>
+</ul>
+<h3>Functions</h3><ul class="item-list">
+<li><a href="fn.batch_invert.html">batch_invert</a></div></li>
+<li><a href="fn.batch_invert_slice.html">batch_invert_slice</a></div></li>
+<li><a href="fn.compute_quadratic_expression.html">compute_quadratic_expression</a></div></li>
+<li><a href="fn.conditional_select.html">conditional_select</a></div></li>
+<li><a href="fn.derive_bignum.html">derive_bignum</a></div></li>
+<li><a href="fn.evaluate_quadratic_expression.html">evaluate_quadratic_expression</a></div></li>
+<li><a href="fn.to_field.html">to_field</a></div></li>
+</ul>
+</nav>
+<main>
+<div><a href="../../index.html">aztec-standards</a> - <a href="../index.html">bignum</a>::<a href="index.html">bignum</a></div>
+<h1>Function <span class="fn">conditional_select</span></h1>
+<pre><code>pub fn conditional_select&lt;T&gt;(lhs: T, rhs: T, predicate: <a href="../../std/primitive.bool.html" class="primitive">bool</a>) -> T
+<div class="where-clause">where
+    T: <a href="../../bignum/bignum/trait.BigNum.html" class="trait">BigNum</a></div></code></pre>
+
+<div class="comments">
+<p>Conditionally selects between two BigNum values.</p>
+<p>Returns <code>lhs</code> if <code>predicate</code> is <code>true</code>, otherwise returns <code>rhs</code>.</p>
+<h2>Example</h2>
+<pre><code><span class="kw">let</span> result = conditional_select(a, b, condition);
+<span class="comment">// Equivalent to: if condition { a } else { b }</span></code></pre>
+<h2>Note</h2>
+<p>This is useful for constant-time selection where you want to avoid branching
+on secret values in constrained code.</p></div>
+</main>
+</span>
+</body>
+</html>

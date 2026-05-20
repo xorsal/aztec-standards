@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../../styles.css">
+<script defer src="../../nargo_doc.js"></script>
+<title>Struct settle_deposit_public_to_private_exact_internal_parameters documentation</title>
+</head>
+<body>
+<div id="sidebar-toggle">
+<button id="sidebar-toggle-button"></button>
+<div id="sidebar-toggle-title">settle_deposit_public_to_private_exact_internal_parameters</div>
+</div>
+<span id="main-contents">
+<nav class="sidebar">
+<h1><a href="../../index.html">aztec-standards</a></h1>
+<div><a href="../../all.html">All items</a></div>
+<h2 id="crate-name"><a href="../index.html">vault_contract</a></h2>
+<div id="crate-version">0.0.0</div>
+<h2><a href="#struct">Struct settle_deposit_public_to_private_exact_internal_parameters</a></h2>
+<h3>Fields</h3>
+<ul class="sidebar-list">
+<li><a href="#structfield.assets">assets</a></li>
+<li><a href="#structfield.commitment">commitment</a></li>
+<li><a href="#structfield.from">from</a></li>
+<li><a href="#structfield.min_shares">min_shares</a></li>
+<li><a href="#structfield.nonce">nonce</a></li>
+</ul>
+<h2>In module Vault</h2>
+<h3>Structs</h3><ul class="item-list">
+<li><a href="struct.asset_abi.html">asset_abi</a></div></li>
+<li><a href="struct.asset_parameters.html">asset_parameters</a></div></li>
+<li><a href="struct.CallInternal.html">CallInternal</a></div></li>
+<li><a href="struct.CallSelf.html">CallSelf</a></div></li>
+<li><a href="struct.CallSelfStatic.html">CallSelfStatic</a></div></li>
+<li><a href="struct.constructor_abi.html">constructor_abi</a></div></li>
+<li><a href="struct.constructor_parameters.html">constructor_parameters</a></div></li>
+<li><a href="struct.convert_to_assets_abi.html">convert_to_assets_abi</a></div></li>
+<li><a href="struct.convert_to_assets_parameters.html">convert_to_assets_parameters</a></div></li>
+<li><a href="struct.convert_to_shares_abi.html">convert_to_shares_abi</a></div></li>
+<li><a href="struct.convert_to_shares_parameters.html">convert_to_shares_parameters</a></div></li>
+<li><a href="struct.deposit_private_to_private_abi.html">deposit_private_to_private_abi</a></div></li>
+<li><a href="struct.deposit_private_to_private_exact_abi.html">deposit_private_to_private_exact_abi</a></div></li>
+<li><a href="struct.deposit_private_to_private_exact_parameters.html">deposit_private_to_private_exact_parameters</a></div></li>
+<li><a href="struct.deposit_private_to_private_parameters.html">deposit_private_to_private_parameters</a></div></li>
+<li><a href="struct.deposit_private_to_public_abi.html">deposit_private_to_public_abi</a></div></li>
+<li><a href="struct.deposit_private_to_public_parameters.html">deposit_private_to_public_parameters</a></div></li>
+<li><a href="struct.deposit_public_to_private_abi.html">deposit_public_to_private_abi</a></div></li>
+<li><a href="struct.deposit_public_to_private_exact_abi.html">deposit_public_to_private_exact_abi</a></div></li>
+<li><a href="struct.deposit_public_to_private_exact_parameters.html">deposit_public_to_private_exact_parameters</a></div></li>
+<li><a href="struct.deposit_public_to_private_parameters.html">deposit_public_to_private_parameters</a></div></li>
+<li><a href="struct.deposit_public_to_public_abi.html">deposit_public_to_public_abi</a></div></li>
+<li><a href="struct.deposit_public_to_public_parameters.html">deposit_public_to_public_parameters</a></div></li>
+<li><a href="struct.EnqueueSelf.html">EnqueueSelf</a></div></li>
+<li><a href="struct.EnqueueSelfStatic.html">EnqueueSelfStatic</a></div></li>
+<li><a href="struct.get_vault_offset_abi.html">get_vault_offset_abi</a></div></li>
+<li><a href="struct.get_vault_offset_parameters.html">get_vault_offset_parameters</a></div></li>
+<li><a href="struct.issue_private_to_private_exact_abi.html">issue_private_to_private_exact_abi</a></div></li>
+<li><a href="struct.issue_private_to_private_exact_parameters.html">issue_private_to_private_exact_parameters</a></div></li>
+<li><a href="struct.issue_private_to_public_exact_abi.html">issue_private_to_public_exact_abi</a></div></li>
+<li><a href="struct.issue_private_to_public_exact_parameters.html">issue_private_to_public_exact_parameters</a></div></li>
+<li><a href="struct.issue_public_to_private_abi.html">issue_public_to_private_abi</a></div></li>
+<li><a href="struct.issue_public_to_private_parameters.html">issue_public_to_private_parameters</a></div></li>
+<li><a href="struct.issue_public_to_public_abi.html">issue_public_to_public_abi</a></div></li>
+<li><a href="struct.issue_public_to_public_parameters.html">issue_public_to_public_parameters</a></div></li>
+<li><a href="struct.max_deposit_abi.html">max_deposit_abi</a></div></li>
+<li><a href="struct.max_deposit_parameters.html">max_deposit_parameters</a></div></li>
+<li><a href="struct.max_issue_abi.html">max_issue_abi</a></div></li>
+<li><a href="struct.max_issue_parameters.html">max_issue_parameters</a></div></li>
+<li><a href="struct.max_redeem_abi.html">max_redeem_abi</a></div></li>
+<li><a href="struct.max_redeem_parameters.html">max_redeem_parameters</a></div></li>
+<li><a href="struct.max_withdraw_abi.html">max_withdraw_abi</a></div></li>
+<li><a href="struct.max_withdraw_parameters.html">max_withdraw_parameters</a></div></li>
+<li><a href="struct.offchain_receive_abi.html">offchain_receive_abi</a></div></li>
+<li><a href="struct.offchain_receive_parameters.html">offchain_receive_parameters</a></div></li>
+<li><a href="struct.preview_deposit_abi.html">preview_deposit_abi</a></div></li>
+<li><a href="struct.preview_deposit_parameters.html">preview_deposit_parameters</a></div></li>
+<li><a href="struct.preview_issue_abi.html">preview_issue_abi</a></div></li>
+<li><a href="struct.preview_issue_parameters.html">preview_issue_parameters</a></div></li>
+<li><a href="struct.preview_redeem_abi.html">preview_redeem_abi</a></div></li>
+<li><a href="struct.preview_redeem_parameters.html">preview_redeem_parameters</a></div></li>
+<li><a href="struct.preview_withdraw_abi.html">preview_withdraw_abi</a></div></li>
+<li><a href="struct.preview_withdraw_parameters.html">preview_withdraw_parameters</a></div></li>
+<li><a href="struct.redeem_private_to_private_exact_abi.html">redeem_private_to_private_exact_abi</a></div></li>
+<li><a href="struct.redeem_private_to_private_exact_parameters.html">redeem_private_to_private_exact_parameters</a></div></li>
+<li><a href="struct.redeem_private_to_public_abi.html">redeem_private_to_public_abi</a></div></li>
+<li><a href="struct.redeem_private_to_public_parameters.html">redeem_private_to_public_parameters</a></div></li>
+<li><a href="struct.redeem_public_to_private_exact_abi.html">redeem_public_to_private_exact_abi</a></div></li>
+<li><a href="struct.redeem_public_to_private_exact_parameters.html">redeem_public_to_private_exact_parameters</a></div></li>
+<li><a href="struct.redeem_public_to_public_abi.html">redeem_public_to_public_abi</a></div></li>
+<li><a href="struct.redeem_public_to_public_parameters.html">redeem_public_to_public_parameters</a></div></li>
+<li><a href="struct.set_shares_token_abi.html">set_shares_token_abi</a></div></li>
+<li><a href="struct.set_shares_token_parameters.html">set_shares_token_parameters</a></div></li>
+<li><a href="struct.set_shares_token_with_initial_deposit_abi.html">set_shares_token_with_initial_deposit_abi</a></div></li>
+<li><a href="struct.set_shares_token_with_initial_deposit_parameters.html">set_shares_token_with_initial_deposit_parameters</a></div></li>
+<li><a href="struct.settle_deposit_private_to_private_exact_internal_abi.html">settle_deposit_private_to_private_exact_internal_abi</a></div></li>
+<li><a href="struct.settle_deposit_private_to_private_exact_internal_parameters.html">settle_deposit_private_to_private_exact_internal_parameters</a></div></li>
+<li><a href="struct.settle_deposit_private_to_private_internal_abi.html">settle_deposit_private_to_private_internal_abi</a></div></li>
+<li><a href="struct.settle_deposit_private_to_private_internal_parameters.html">settle_deposit_private_to_private_internal_parameters</a></div></li>
+<li><a href="struct.settle_deposit_private_to_public_internal_abi.html">settle_deposit_private_to_public_internal_abi</a></div></li>
+<li><a href="struct.settle_deposit_private_to_public_internal_parameters.html">settle_deposit_private_to_public_internal_parameters</a></div></li>
+<li><a href="struct.settle_deposit_public_to_private_exact_internal_abi.html">settle_deposit_public_to_private_exact_internal_abi</a></div></li>
+<li><a href="struct.settle_deposit_public_to_private_exact_internal_parameters.html">settle_deposit_public_to_private_exact_internal_parameters</a></div></li>
+<li><a href="struct.settle_deposit_public_to_private_internal_abi.html">settle_deposit_public_to_private_internal_abi</a></div></li>
+<li><a href="struct.settle_deposit_public_to_private_internal_parameters.html">settle_deposit_public_to_private_internal_parameters</a></div></li>
+<li><a href="struct.settle_issue_private_to_private_exact_internal_abi.html">settle_issue_private_to_private_exact_internal_abi</a></div></li>
+<li><a href="struct.settle_issue_private_to_private_exact_internal_parameters.html">settle_issue_private_to_private_exact_internal_parameters</a></div></li>
+<li><a href="struct.settle_issue_private_to_public_exact_internal_abi.html">settle_issue_private_to_public_exact_internal_abi</a></div></li>
+<li><a href="struct.settle_issue_private_to_public_exact_internal_parameters.html">settle_issue_private_to_public_exact_internal_parameters</a></div></li>
+<li><a href="struct.settle_issue_public_to_private_internal_abi.html">settle_issue_public_to_private_internal_abi</a></div></li>
+<li><a href="struct.settle_issue_public_to_private_internal_parameters.html">settle_issue_public_to_private_internal_parameters</a></div></li>
+<li><a href="struct.settle_redeem_private_to_private_exact_internal_abi.html">settle_redeem_private_to_private_exact_internal_abi</a></div></li>
+<li><a href="struct.settle_redeem_private_to_private_exact_internal_parameters.html">settle_redeem_private_to_private_exact_internal_parameters</a></div></li>
+<li><a href="struct.settle_redeem_private_to_public_internal_abi.html">settle_redeem_private_to_public_internal_abi</a></div></li>
+<li><a href="struct.settle_redeem_private_to_public_internal_parameters.html">settle_redeem_private_to_public_internal_parameters</a></div></li>
+<li><a href="struct.settle_redeem_public_to_private_exact_internal_abi.html">settle_redeem_public_to_private_exact_internal_abi</a></div></li>
+<li><a href="struct.settle_redeem_public_to_private_exact_internal_parameters.html">settle_redeem_public_to_private_exact_internal_parameters</a></div></li>
+<li><a href="struct.settle_withdraw_private_to_private_exact_internal_abi.html">settle_withdraw_private_to_private_exact_internal_abi</a></div></li>
+<li><a href="struct.settle_withdraw_private_to_private_exact_internal_parameters.html">settle_withdraw_private_to_private_exact_internal_parameters</a></div></li>
+<li><a href="struct.settle_withdraw_private_to_private_internal_abi.html">settle_withdraw_private_to_private_internal_abi</a></div></li>
+<li><a href="struct.settle_withdraw_private_to_private_internal_parameters.html">settle_withdraw_private_to_private_internal_parameters</a></div></li>
+<li><a href="struct.settle_withdraw_private_to_public_exact_internal_abi.html">settle_withdraw_private_to_public_exact_internal_abi</a></div></li>
+<li><a href="struct.settle_withdraw_private_to_public_exact_internal_parameters.html">settle_withdraw_private_to_public_exact_internal_parameters</a></div></li>
+<li><a href="struct.settle_withdraw_public_to_private_internal_abi.html">settle_withdraw_public_to_private_internal_abi</a></div></li>
+<li><a href="struct.settle_withdraw_public_to_private_internal_parameters.html">settle_withdraw_public_to_private_internal_parameters</a></div></li>
+<li><a href="struct.shares_abi.html">shares_abi</a></div></li>
+<li><a href="struct.shares_parameters.html">shares_parameters</a></div></li>
+<li><a href="struct.StorageLayout.html">StorageLayout</a></div></li>
+<li><a href="struct.StorageLayoutFields.html">StorageLayoutFields</a></div></li>
+<li><a href="struct.sync_state_abi.html">sync_state_abi</a></div></li>
+<li><a href="struct.sync_state_parameters.html">sync_state_parameters</a></div></li>
+<li><a href="struct.total_assets_abi.html">total_assets_abi</a></div></li>
+<li><a href="struct.total_assets_parameters.html">total_assets_parameters</a></div></li>
+<li><a href="struct.Vault.html">Vault</a></div></li>
+<li><a href="struct.withdraw_private_to_private_abi.html">withdraw_private_to_private_abi</a></div></li>
+<li><a href="struct.withdraw_private_to_private_exact_abi.html">withdraw_private_to_private_exact_abi</a></div></li>
+<li><a href="struct.withdraw_private_to_private_exact_parameters.html">withdraw_private_to_private_exact_parameters</a></div></li>
+<li><a href="struct.withdraw_private_to_private_parameters.html">withdraw_private_to_private_parameters</a></div></li>
+<li><a href="struct.withdraw_private_to_public_exact_abi.html">withdraw_private_to_public_exact_abi</a></div></li>
+<li><a href="struct.withdraw_private_to_public_exact_parameters.html">withdraw_private_to_public_exact_parameters</a></div></li>
+<li><a href="struct.withdraw_public_to_private_abi.html">withdraw_public_to_private_abi</a></div></li>
+<li><a href="struct.withdraw_public_to_private_parameters.html">withdraw_public_to_private_parameters</a></div></li>
+<li><a href="struct.withdraw_public_to_public_abi.html">withdraw_public_to_public_abi</a></div></li>
+<li><a href="struct.withdraw_public_to_public_parameters.html">withdraw_public_to_public_parameters</a></div></li>
+</ul>
+<h3>Functions</h3><ul class="item-list">
+<li><a href="fn.at.html">at</a></div></li>
+<li><a href="fn.interface.html">interface</a></div></li>
+<li><a href="fn.public_dispatch.html">public_dispatch</a></div></li>
+<li><a href="fn.storage_layout.html">storage_layout</a></div></li>
+</ul>
+<h3>Globals</h3><ul class="item-list">
+<li><a href="global.STORAGE_LAYOUT_Vault.html">STORAGE_LAYOUT_Vault</a></div></li>
+</ul>
+</nav>
+<main>
+<div><a href="../../index.html">aztec-standards</a> - <a href="../index.html">vault_contract</a>::<a href="index.html">Vault</a></div>
+<h1>Struct <span id="struct" class="struct">settle_deposit_public_to_private_exact_internal_parameters</span></h1>
+<pre><code>pub struct settle_deposit_public_to_private_exact_internal_parameters {
+    pub from: <a href="../../protocol_types/address/aztec_address/struct.AztecAddress.html" class="struct">AztecAddress</a>,
+    pub commitment: <a href="../../std/primitive.Field.html" class="primitive">Field</a>,
+    pub assets: <a href="../../std/primitive.u128.html" class="primitive">u128</a>,
+    pub min_shares: <a href="../../std/primitive.u128.html" class="primitive">u128</a>,
+    pub nonce: <a href="../../std/primitive.Field.html" class="primitive">Field</a>,
+}
+</code></pre>
+<h2>Fields</h2>
+<div id="structfield.from" class="struct-field"><code class="code-header">from: <a href="../../protocol_types/address/aztec_address/struct.AztecAddress.html" class="struct">AztecAddress</a></code></div>
+<div class="padded-description"></div><div id="structfield.commitment" class="struct-field"><code class="code-header">commitment: <a href="../../std/primitive.Field.html" class="primitive">Field</a></code></div>
+<div class="padded-description"></div><div id="structfield.assets" class="struct-field"><code class="code-header">assets: <a href="../../std/primitive.u128.html" class="primitive">u128</a></code></div>
+<div class="padded-description"></div><div id="structfield.min_shares" class="struct-field"><code class="code-header">min_shares: <a href="../../std/primitive.u128.html" class="primitive">u128</a></code></div>
+<div class="padded-description"></div><div id="structfield.nonce" class="struct-field"><code class="code-header">nonce: <a href="../../std/primitive.Field.html" class="primitive">Field</a></code></div>
+<div class="padded-description"></div></main>
+</span>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../../styles.css">
+<script defer src="../../nargo_doc.js"></script>
+<title>Struct CallSelf documentation</title>
+</head>
+<body>
+<div id="sidebar-toggle">
+<button id="sidebar-toggle-button"></button>
+<div id="sidebar-toggle-title">CallSelf</div>
+</div>
+<span id="main-contents">
+<nav class="sidebar">
+<h1><a href="../../index.html">aztec-standards</a></h1>
+<div><a href="../../all.html">All items</a></div>
+<h2 id="crate-name"><a href="../index.html">escrow_contract</a></h2>
+<div id="crate-version">0.0.0</div>
+<h2><a href="#struct">Struct CallSelf</a></h2>
+<h3>Fields</h3>
+<ul class="sidebar-list">
+<li><a href="#structfield.address">address</a></li>
+<li><a href="#structfield.context">context</a></li>
+</ul>
+<h3>Methods</h3>
+<ul class="sidebar-list">
+<li><a href="#withdraw">withdraw</a></li>
+<li><a href="#withdraw_nft">withdraw_nft</a></li>
+</ul>
+<h2>In module Escrow</h2>
+<h3>Structs</h3><ul class="item-list">
+<li><a href="struct.CallInternal.html">CallInternal</a></div></li>
+<li><a href="struct.CallSelf.html">CallSelf</a></div></li>
+<li><a href="struct.CallSelfStatic.html">CallSelfStatic</a></div></li>
+<li><a href="struct.EnqueueSelf.html">EnqueueSelf</a></div></li>
+<li><a href="struct.EnqueueSelfStatic.html">EnqueueSelfStatic</a></div></li>
+<li><a href="struct.Escrow.html">Escrow</a></div></li>
+<li><a href="struct.offchain_receive_abi.html">offchain_receive_abi</a></div></li>
+<li><a href="struct.offchain_receive_parameters.html">offchain_receive_parameters</a></div></li>
+<li><a href="struct.sync_state_abi.html">sync_state_abi</a></div></li>
+<li><a href="struct.sync_state_parameters.html">sync_state_parameters</a></div></li>
+<li><a href="struct.withdraw_abi.html">withdraw_abi</a></div></li>
+<li><a href="struct.withdraw_nft_abi.html">withdraw_nft_abi</a></div></li>
+<li><a href="struct.withdraw_nft_parameters.html">withdraw_nft_parameters</a></div></li>
+<li><a href="struct.withdraw_parameters.html">withdraw_parameters</a></div></li>
+</ul>
+<h3>Functions</h3><ul class="item-list">
+<li><a href="fn.at.html">at</a></div></li>
+<li><a href="fn.interface.html">interface</a></div></li>
+</ul>
+</nav>
+<main>
+<div><a href="../../index.html">aztec-standards</a> - <a href="../index.html">escrow_contract</a>::<a href="index.html">Escrow</a></div>
+<h1>Struct <span id="struct" class="struct">CallSelf</span></h1>
+<pre><code>pub struct CallSelf&lt;Context&gt; {
+    pub address: <a href="../../protocol_types/address/aztec_address/struct.AztecAddress.html" class="struct">AztecAddress</a>,
+    pub context: Context,
+}
+</code></pre>
+<h2>Fields</h2>
+<div id="structfield.address" class="struct-field"><code class="code-header">address: <a href="../../protocol_types/address/aztec_address/struct.AztecAddress.html" class="struct">AztecAddress</a></code></div>
+<div class="padded-description"></div><div id="structfield.context" class="struct-field"><code class="code-header">context: Context</code></div>
+<div class="padded-description"></div><h2>Implementations</h2>
+<h3><code class="code-header">impl <a href="../../generic_proxy/GenericProxy/struct.CallSelf.html" class="struct">CallSelf</a>&lt;&mut <a href="../../aztec/context/struct.PrivateContext.html" class="struct">PrivateContext</a>&gt;</code></h3>
+
+<div class="padded-methods"><code id="withdraw_nft" class="code-header">pub fn <a href="#withdraw_nft"><span class="fn">withdraw_nft</span></a>(self, nft: <a href="../../protocol_types/address/aztec_address/struct.AztecAddress.html" class="struct">AztecAddress</a>, token_id: <a href="../../std/primitive.Field.html" class="primitive">Field</a>, recipient: <a href="../../protocol_types/address/aztec_address/struct.AztecAddress.html" class="struct">AztecAddress</a>)</code>
+
+<code id="withdraw" class="code-header">pub fn <a href="#withdraw"><span class="fn">withdraw</span></a>(self, token: <a href="../../protocol_types/address/aztec_address/struct.AztecAddress.html" class="struct">AztecAddress</a>, amount: <a href="../../std/primitive.u128.html" class="primitive">u128</a>, recipient: <a href="../../protocol_types/address/aztec_address/struct.AztecAddress.html" class="struct">AztecAddress</a>)</code>
+
+</div></main>
+</span>
+</body>
+</html>

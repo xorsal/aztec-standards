@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../../styles.css">
+<script defer src="../../nargo_doc.js"></script>
+<title>Struct CallInternal documentation</title>
+</head>
+<body>
+<div id="sidebar-toggle">
+<button id="sidebar-toggle-button"></button>
+<div id="sidebar-toggle-title">CallInternal</div>
+</div>
+<span id="main-contents">
+<nav class="sidebar">
+<h1><a href="../../index.html">aztec-standards</a></h1>
+<div><a href="../../all.html">All items</a></div>
+<h2 id="crate-name"><a href="../index.html">nft_contract</a></h2>
+<div id="crate-version">0.0.0</div>
+<h2><a href="#struct">Struct CallInternal</a></h2>
+<h3>Fields</h3>
+<ul class="sidebar-list">
+<li><a href="#structfield.context">context</a></li>
+</ul>
+<h3>Methods</h3>
+<ul class="sidebar-list">
+<li><a href="#_initialize_transfer_commitment">_initialize_transfer_commitment</a></li>
+<li><a href="#_remove_private_token_owner">_remove_private_token_owner</a></li>
+<li><a href="#_set_nft_exists">_set_nft_exists</a></li>
+<li><a href="#_store_commitment_in_storage">_store_commitment_in_storage</a></li>
+<li><a href="#_transfer_token_to_commitment">_transfer_token_to_commitment</a></li>
+<li><a href="#_update_private_token_owner">_update_private_token_owner</a></li>
+<li><a href="#_update_public_token_owner">_update_public_token_owner</a></li>
+<li><a href="#_validate_public_token_owner">_validate_public_token_owner</a></li>
+</ul>
+<h2>In module NFT</h2>
+<h3>Structs</h3><ul class="item-list">
+<li><a href="struct.burn_private_abi.html">burn_private_abi</a></div></li>
+<li><a href="struct.burn_private_internal_abi.html">burn_private_internal_abi</a></div></li>
+<li><a href="struct.burn_private_internal_parameters.html">burn_private_internal_parameters</a></div></li>
+<li><a href="struct.burn_private_parameters.html">burn_private_parameters</a></div></li>
+<li><a href="struct.burn_public_abi.html">burn_public_abi</a></div></li>
+<li><a href="struct.burn_public_parameters.html">burn_public_parameters</a></div></li>
+<li><a href="struct.CallInternal.html">CallInternal</a></div></li>
+<li><a href="struct.CallSelf.html">CallSelf</a></div></li>
+<li><a href="struct.CallSelfStatic.html">CallSelfStatic</a></div></li>
+<li><a href="struct.constructor_with_minter_abi.html">constructor_with_minter_abi</a></div></li>
+<li><a href="struct.constructor_with_minter_parameters.html">constructor_with_minter_parameters</a></div></li>
+<li><a href="struct.EnqueueSelf.html">EnqueueSelf</a></div></li>
+<li><a href="struct.EnqueueSelfStatic.html">EnqueueSelfStatic</a></div></li>
+<li><a href="struct.get_private_nfts_abi.html">get_private_nfts_abi</a></div></li>
+<li><a href="struct.get_private_nfts_parameters.html">get_private_nfts_parameters</a></div></li>
+<li><a href="struct.initialize_transfer_commitment_abi.html">initialize_transfer_commitment_abi</a></div></li>
+<li><a href="struct.initialize_transfer_commitment_parameters.html">initialize_transfer_commitment_parameters</a></div></li>
+<li><a href="struct.mint_to_private_abi.html">mint_to_private_abi</a></div></li>
+<li><a href="struct.mint_to_private_internal_abi.html">mint_to_private_internal_abi</a></div></li>
+<li><a href="struct.mint_to_private_internal_parameters.html">mint_to_private_internal_parameters</a></div></li>
+<li><a href="struct.mint_to_private_parameters.html">mint_to_private_parameters</a></div></li>
+<li><a href="struct.mint_to_public_abi.html">mint_to_public_abi</a></div></li>
+<li><a href="struct.mint_to_public_parameters.html">mint_to_public_parameters</a></div></li>
+<li><a href="struct.NFT.html">NFT</a></div></li>
+<li><a href="struct.offchain_receive_abi.html">offchain_receive_abi</a></div></li>
+<li><a href="struct.offchain_receive_parameters.html">offchain_receive_parameters</a></div></li>
+<li><a href="struct.public_get_name_abi.html">public_get_name_abi</a></div></li>
+<li><a href="struct.public_get_name_parameters.html">public_get_name_parameters</a></div></li>
+<li><a href="struct.public_get_symbol_abi.html">public_get_symbol_abi</a></div></li>
+<li><a href="struct.public_get_symbol_parameters.html">public_get_symbol_parameters</a></div></li>
+<li><a href="struct.public_owner_of_abi.html">public_owner_of_abi</a></div></li>
+<li><a href="struct.public_owner_of_parameters.html">public_owner_of_parameters</a></div></li>
+<li><a href="struct.StorageLayout.html">StorageLayout</a></div></li>
+<li><a href="struct.StorageLayoutFields.html">StorageLayoutFields</a></div></li>
+<li><a href="struct.store_commitment_in_storage_internal_abi.html">store_commitment_in_storage_internal_abi</a></div></li>
+<li><a href="struct.store_commitment_in_storage_internal_parameters.html">store_commitment_in_storage_internal_parameters</a></div></li>
+<li><a href="struct.sync_state_abi.html">sync_state_abi</a></div></li>
+<li><a href="struct.sync_state_parameters.html">sync_state_parameters</a></div></li>
+<li><a href="struct.transfer_private_to_commitment_abi.html">transfer_private_to_commitment_abi</a></div></li>
+<li><a href="struct.transfer_private_to_commitment_parameters.html">transfer_private_to_commitment_parameters</a></div></li>
+<li><a href="struct.transfer_private_to_private_abi.html">transfer_private_to_private_abi</a></div></li>
+<li><a href="struct.transfer_private_to_private_parameters.html">transfer_private_to_private_parameters</a></div></li>
+<li><a href="struct.transfer_private_to_public_abi.html">transfer_private_to_public_abi</a></div></li>
+<li><a href="struct.transfer_private_to_public_parameters.html">transfer_private_to_public_parameters</a></div></li>
+<li><a href="struct.transfer_private_to_public_with_commitment_abi.html">transfer_private_to_public_with_commitment_abi</a></div></li>
+<li><a href="struct.transfer_private_to_public_with_commitment_parameters.html">transfer_private_to_public_with_commitment_parameters</a></div></li>
+<li><a href="struct.transfer_public_to_commitment_abi.html">transfer_public_to_commitment_abi</a></div></li>
+<li><a href="struct.transfer_public_to_commitment_parameters.html">transfer_public_to_commitment_parameters</a></div></li>
+<li><a href="struct.transfer_public_to_private_abi.html">transfer_public_to_private_abi</a></div></li>
+<li><a href="struct.transfer_public_to_private_internal_abi.html">transfer_public_to_private_internal_abi</a></div></li>
+<li><a href="struct.transfer_public_to_private_internal_parameters.html">transfer_public_to_private_internal_parameters</a></div></li>
+<li><a href="struct.transfer_public_to_private_parameters.html">transfer_public_to_private_parameters</a></div></li>
+<li><a href="struct.transfer_public_to_public_abi.html">transfer_public_to_public_abi</a></div></li>
+<li><a href="struct.transfer_public_to_public_parameters.html">transfer_public_to_public_parameters</a></div></li>
+<li><a href="struct.transfer_token_to_commitment_internal_abi.html">transfer_token_to_commitment_internal_abi</a></div></li>
+<li><a href="struct.transfer_token_to_commitment_internal_parameters.html">transfer_token_to_commitment_internal_parameters</a></div></li>
+<li><a href="struct.update_public_token_owner_from_zero_internal_abi.html">update_public_token_owner_from_zero_internal_abi</a></div></li>
+<li><a href="struct.update_public_token_owner_from_zero_internal_parameters.html">update_public_token_owner_from_zero_internal_parameters</a></div></li>
+</ul>
+<h3>Functions</h3><ul class="item-list">
+<li><a href="fn.at.html">at</a></div></li>
+<li><a href="fn.interface.html">interface</a></div></li>
+<li><a href="fn.public_dispatch.html">public_dispatch</a></div></li>
+<li><a href="fn.storage_layout.html">storage_layout</a></div></li>
+</ul>
+<h3>Globals</h3><ul class="item-list">
+<li><a href="global.STORAGE_LAYOUT_NFT.html">STORAGE_LAYOUT_NFT</a></div></li>
+</ul>
+</nav>
+<main>
+<div><a href="../../index.html">aztec-standards</a> - <a href="../index.html">nft_contract</a>::<a href="index.html">NFT</a></div>
+<h1>Struct <span id="struct" class="struct">CallInternal</span></h1>
+<pre><code>pub struct CallInternal&lt;Context&gt; {
+    pub context: Context,
+}
+</code></pre>
+<h2>Fields</h2>
+<div id="structfield.context" class="struct-field"><code class="code-header">context: Context</code></div>
+<div class="padded-description"></div><h2>Implementations</h2>
+<h3><code class="code-header">impl <a href="../../generic_proxy/GenericProxy/struct.CallInternal.html" class="struct">CallInternal</a>&lt;<a href="../../aztec/context/struct.PublicContext.html" class="struct">PublicContext</a>&gt;</code></h3>
+
+<div class="padded-methods"><code id="_set_nft_exists" class="code-header">pub unconstrained fn <a href="#_set_nft_exists"><span class="fn">_set_nft_exists</span></a>(self, token_id: <a href="../../std/primitive.Field.html" class="primitive">Field</a>, exists: <a href="../../std/primitive.bool.html" class="primitive">bool</a>)</code>
+
+<code id="_store_commitment_in_storage" class="code-header">pub unconstrained fn <a href="#_store_commitment_in_storage"><span class="fn">_store_commitment_in_storage</span></a>(self, commitment: <a href="../../nft_contract/types/nft_note/struct.PartialNFTNote.html" class="struct">PartialNFTNote</a>)</code>
+
+<code id="_validate_public_token_owner" class="code-header">pub unconstrained fn <a href="#_validate_public_token_owner"><span class="fn">_validate_public_token_owner</span></a>(
+    self,
+    from: <a href="../../protocol_types/address/aztec_address/struct.AztecAddress.html" class="struct">AztecAddress</a>,
+    token_id: <a href="../../std/primitive.Field.html" class="primitive">Field</a>,
+)</code>
+
+<code id="_transfer_token_to_commitment" class="code-header">pub unconstrained fn <a href="#_transfer_token_to_commitment"><span class="fn">_transfer_token_to_commitment</span></a>(
+    self,
+    commitment: <a href="../../std/primitive.Field.html" class="primitive">Field</a>,
+    token_id: <a href="../../std/primitive.Field.html" class="primitive">Field</a>,
+    completer: <a href="../../protocol_types/address/aztec_address/struct.AztecAddress.html" class="struct">AztecAddress</a>,
+)</code>
+
+<code id="_update_public_token_owner" class="code-header">pub unconstrained fn <a href="#_update_public_token_owner"><span class="fn">_update_public_token_owner</span></a>(self, to: <a href="../../protocol_types/address/aztec_address/struct.AztecAddress.html" class="struct">AztecAddress</a>, token_id: <a href="../../std/primitive.Field.html" class="primitive">Field</a>)</code>
+
+</div><h3><code class="code-header">impl <a href="../../generic_proxy/GenericProxy/struct.CallInternal.html" class="struct">CallInternal</a>&lt;&mut <a href="../../aztec/context/struct.PrivateContext.html" class="struct">PrivateContext</a>&gt;</code></h3>
+
+<div class="padded-methods"><code id="_update_private_token_owner" class="code-header">pub fn <a href="#_update_private_token_owner"><span class="fn">_update_private_token_owner</span></a>(self, to: <a href="../../protocol_types/address/aztec_address/struct.AztecAddress.html" class="struct">AztecAddress</a>, token_id: <a href="../../std/primitive.Field.html" class="primitive">Field</a>)</code>
+
+<code id="_initialize_transfer_commitment" class="code-header">pub fn <a href="#_initialize_transfer_commitment"><span class="fn">_initialize_transfer_commitment</span></a>(
+    self,
+    to: <a href="../../protocol_types/address/aztec_address/struct.AztecAddress.html" class="struct">AztecAddress</a>,
+    completer: <a href="../../protocol_types/address/aztec_address/struct.AztecAddress.html" class="struct">AztecAddress</a>,
+) -> <a href="../../nft_contract/types/nft_note/struct.PartialNFTNote.html" class="struct">PartialNFTNote</a></code>
+
+<code id="_remove_private_token_owner" class="code-header">pub fn <a href="#_remove_private_token_owner"><span class="fn">_remove_private_token_owner</span></a>(self, from: <a href="../../protocol_types/address/aztec_address/struct.AztecAddress.html" class="struct">AztecAddress</a>, token_id: <a href="../../std/primitive.Field.html" class="primitive">Field</a>)</code>
+
+</div></main>
+</span>
+</body>
+</html>

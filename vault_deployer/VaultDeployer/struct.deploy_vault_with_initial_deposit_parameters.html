@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../../styles.css">
+<script defer src="../../nargo_doc.js"></script>
+<title>Struct deploy_vault_with_initial_deposit_parameters documentation</title>
+</head>
+<body>
+<div id="sidebar-toggle">
+<button id="sidebar-toggle-button"></button>
+<div id="sidebar-toggle-title">deploy_vault_with_initial_deposit_parameters</div>
+</div>
+<span id="main-contents">
+<nav class="sidebar">
+<h1><a href="../../index.html">aztec-standards</a></h1>
+<div><a href="../../all.html">All items</a></div>
+<h2 id="crate-name"><a href="../index.html">vault_deployer</a></h2>
+<div id="crate-version">0.0.0</div>
+<h2><a href="#struct">Struct deploy_vault_with_initial_deposit_parameters</a></h2>
+<h3>Fields</h3>
+<ul class="sidebar-list">
+<li><a href="#structfield.asset">asset</a></li>
+<li><a href="#structfield.depositor">depositor</a></li>
+<li><a href="#structfield.initial_deposit">initial_deposit</a></li>
+<li><a href="#structfield.nonce">nonce</a></li>
+<li><a href="#structfield.shares_class_id">shares_class_id</a></li>
+<li><a href="#structfield.shares_decimals">shares_decimals</a></li>
+<li><a href="#structfield.shares_name">shares_name</a></li>
+<li><a href="#structfield.shares_symbol">shares_symbol</a></li>
+<li><a href="#structfield.vault_class_id">vault_class_id</a></li>
+<li><a href="#structfield.vault_offset">vault_offset</a></li>
+</ul>
+<h2>In module VaultDeployer</h2>
+<h3>Structs</h3><ul class="item-list">
+<li><a href="struct.CallInternal.html">CallInternal</a></div></li>
+<li><a href="struct.CallSelf.html">CallSelf</a></div></li>
+<li><a href="struct.CallSelfStatic.html">CallSelfStatic</a></div></li>
+<li><a href="struct.deploy_vault_abi.html">deploy_vault_abi</a></div></li>
+<li><a href="struct.deploy_vault_parameters.html">deploy_vault_parameters</a></div></li>
+<li><a href="struct.deploy_vault_with_initial_deposit_abi.html">deploy_vault_with_initial_deposit_abi</a></div></li>
+<li><a href="struct.deploy_vault_with_initial_deposit_parameters.html">deploy_vault_with_initial_deposit_parameters</a></div></li>
+<li><a href="struct.EnqueueSelf.html">EnqueueSelf</a></div></li>
+<li><a href="struct.EnqueueSelfStatic.html">EnqueueSelfStatic</a></div></li>
+<li><a href="struct.offchain_receive_abi.html">offchain_receive_abi</a></div></li>
+<li><a href="struct.offchain_receive_parameters.html">offchain_receive_parameters</a></div></li>
+<li><a href="struct.sync_state_abi.html">sync_state_abi</a></div></li>
+<li><a href="struct.sync_state_parameters.html">sync_state_parameters</a></div></li>
+<li><a href="struct.VaultDeployer.html">VaultDeployer</a></div></li>
+</ul>
+<h3>Functions</h3><ul class="item-list">
+<li><a href="fn.at.html">at</a></div></li>
+<li><a href="fn.interface.html">interface</a></div></li>
+</ul>
+</nav>
+<main>
+<div><a href="../../index.html">aztec-standards</a> - <a href="../index.html">vault_deployer</a>::<a href="index.html">VaultDeployer</a></div>
+<h1>Struct <span id="struct" class="struct">deploy_vault_with_initial_deposit_parameters</span></h1>
+<pre><code>pub struct deploy_vault_with_initial_deposit_parameters {
+    pub asset: <a href="../../protocol_types/address/aztec_address/struct.AztecAddress.html" class="struct">AztecAddress</a>,
+    pub vault_offset: <a href="../../std/primitive.u128.html" class="primitive">u128</a>,
+    pub vault_class_id: <a href="../../protocol_types/contract_class_id/struct.ContractClassId.html" class="struct">ContractClassId</a>,
+    pub shares_name: <a href="../../std/primitive.str.html" class="primitive">str</a>&lt;31&gt;,
+    pub shares_symbol: <a href="../../std/primitive.str.html" class="primitive">str</a>&lt;31&gt;,
+    pub shares_decimals: <a href="../../std/primitive.u8.html" class="primitive">u8</a>,
+    pub shares_class_id: <a href="../../protocol_types/contract_class_id/struct.ContractClassId.html" class="struct">ContractClassId</a>,
+    pub initial_deposit: <a href="../../std/primitive.u128.html" class="primitive">u128</a>,
+    pub depositor: <a href="../../protocol_types/address/aztec_address/struct.AztecAddress.html" class="struct">AztecAddress</a>,
+    pub nonce: <a href="../../std/primitive.Field.html" class="primitive">Field</a>,
+}
+</code></pre>
+<h2>Fields</h2>
+<div id="structfield.asset" class="struct-field"><code class="code-header">asset: <a href="../../protocol_types/address/aztec_address/struct.AztecAddress.html" class="struct">AztecAddress</a></code></div>
+<div class="padded-description"></div><div id="structfield.vault_offset" class="struct-field"><code class="code-header">vault_offset: <a href="../../std/primitive.u128.html" class="primitive">u128</a></code></div>
+<div class="padded-description"></div><div id="structfield.vault_class_id" class="struct-field"><code class="code-header">vault_class_id: <a href="../../protocol_types/contract_class_id/struct.ContractClassId.html" class="struct">ContractClassId</a></code></div>
+<div class="padded-description"></div><div id="structfield.shares_name" class="struct-field"><code class="code-header">shares_name: <a href="../../std/primitive.str.html" class="primitive">str</a>&lt;31&gt;</code></div>
+<div class="padded-description"></div><div id="structfield.shares_symbol" class="struct-field"><code class="code-header">shares_symbol: <a href="../../std/primitive.str.html" class="primitive">str</a>&lt;31&gt;</code></div>
+<div class="padded-description"></div><div id="structfield.shares_decimals" class="struct-field"><code class="code-header">shares_decimals: <a href="../../std/primitive.u8.html" class="primitive">u8</a></code></div>
+<div class="padded-description"></div><div id="structfield.shares_class_id" class="struct-field"><code class="code-header">shares_class_id: <a href="../../protocol_types/contract_class_id/struct.ContractClassId.html" class="struct">ContractClassId</a></code></div>
+<div class="padded-description"></div><div id="structfield.initial_deposit" class="struct-field"><code class="code-header">initial_deposit: <a href="../../std/primitive.u128.html" class="primitive">u128</a></code></div>
+<div class="padded-description"></div><div id="structfield.depositor" class="struct-field"><code class="code-header">depositor: <a href="../../protocol_types/address/aztec_address/struct.AztecAddress.html" class="struct">AztecAddress</a></code></div>
+<div class="padded-description"></div><div id="structfield.nonce" class="struct-field"><code class="code-header">nonce: <a href="../../std/primitive.Field.html" class="primitive">Field</a></code></div>
+<div class="padded-description"></div></main>
+</span>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../../styles.css">
+<script defer src="../../nargo_doc.js"></script>
+<title>Module internal documentation</title>
+</head>
+<body>
+<div id="sidebar-toggle">
+<button id="sidebar-toggle-button"></button>
+<div id="sidebar-toggle-title">internal</div>
+</div>
+<span id="main-contents">
+<nav class="sidebar">
+<h1><a href="../../index.html">aztec-standards</a></h1>
+<div><a href="../../all.html">All items</a></div>
+<h2 id="crate-name"><a href="../index.html">bignum</a></h2>
+<div id="crate-version">0.0.0</div>
+<h2><a href="#mod">Module internal</a></h2>
+<h3>Module items</h3>
+<ul class="sidebar-list">
+<li><a href="#functions">Functions</a></li>
+</ul>
+<h2>In module bignum</h2>
+<h3>Modules</h3><ul class="item-list">
+<li><a href="../bignum/index.html">bignum</a></div></li>
+<li><a href="../fields/index.html">fields</a></div></li>
+<li><a href="../internal/index.html">internal</a></div></li>
+<li><a href="../params/index.html">params</a></div></li>
+</ul>
+<h3>Structs</h3><ul class="item-list">
+<li><a href="../struct.RuntimeBigNum.html">RuntimeBigNum</a></div></li>
+</ul>
+</nav>
+<main>
+<div><a href="../../index.html">aztec-standards</a> - <a href="../index.html">bignum</a>::internal</div>
+<h1>Module <span id="mod" class="module">internal</span></h1>
+<h2 id="functions">Functions</h2><ul class="item-list">
+<li><div class="item-name"><a href="fn.__add.html" class="fn">__add</a></div><div class="item-description">Adds two <code>BigNum</code> values with modular reduction (unconstrained)</div></li>
+<li><div class="item-name"><a href="fn.__derive_from_seed.html" class="fn">__derive_from_seed</a></div><div class="item-description">Deterministically derives a <code>BigNum</code> from a seed value (unconstrained)</div></li>
+<li><div class="item-name"><a href="fn.__div.html" class="fn">__div</a></div><div class="item-description">Divides two <code>BigNum</code> values with modular reduction (unconstrained).</div></li>
+<li><div class="item-name"><a href="fn.__eq.html" class="fn">__eq</a></div><div class="item-description">Compare two limb arrays for equality (unconstrained)</div></li>
+<li><div class="item-name"><a href="fn.__invmod.html" class="fn">__invmod</a></div><div class="item-description">Given a <code>BigNum</code> value <code>x</code> compute x^{-1} (mod MOD) (unconstrained)</div></li>
+<li><div class="item-name"><a href="fn.__is_zero.html" class="fn">__is_zero</a></div><div class="item-description">Compare a limb array to a zero array (unconstrained)</div></li>
+<li><div class="item-name"><a href="fn.__mul.html" class="fn">__mul</a></div><div class="item-description">Multiplies two <code>BigNum</code> values with modular reduction (unconstrained).</div></li>
+<li><div class="item-name"><a href="fn.__neg.html" class="fn">__neg</a></div><div class="item-description">Negates a <code>BigNum</code> value, returning <code>m - x</code> (unconstrained)</div></li>
+<li><div class="item-name"><a href="fn.__pow.html" class="fn">__pow</a></div><div class="item-description">Modular exponentiation via square-and-multiply. LSB-first (unconstrained).</div></li>
+<li><div class="item-name"><a href="fn.__sqr.html" class="fn">__sqr</a></div><div class="item-description">Squares a <code>BigNum</code> value with modular reduction (unconstrained).</div></li>
+<li><div class="item-name"><a href="fn.__sqrt.html" class="fn">__sqrt</a></div><div class="item-description">Compute a modular square root in a prime field (unconstrained)</div></li>
+<li><div class="item-name"><a href="fn.__sub.html" class="fn">__sub</a></div><div class="item-description">Subtracts two <code>BigNum</code> values with modular reduction (unconstrained).</div></li>
+<li><div class="item-name"><a href="fn.__udiv_mod.html" class="fn">__udiv_mod</a></div><div class="item-description">Given the <code>BigNum</code> inputs <code>x, y</code>, compute integer division x / y (unconstrained)</div></li>
+<li><div class="item-name"><a href="fn.add.html" class="fn">add</a></div><div class="item-description">Add two <code>BigNum</code> values</div></li>
+<li><div class="item-name"><a href="fn.assert_is_not_equal.html" class="fn">assert_is_not_equal</a></div><div class="item-description">Validate lhs != rhs</div></li>
+<li><div class="item-name"><a href="fn.assert_is_not_zero.html" class="fn">assert_is_not_zero</a></div><div class="item-description">Validate that a <code>BigNum</code> value is not zero modulo <code>MOD</code>.</div></li>
+<li><div class="item-name"><a href="fn.assert_is_not_zero_integer.html" class="fn">assert_is_not_zero_integer</a></div><div class="item-description">Validate that <code>val</code> is not equal to zero when interpreted as an integer.</div></li>
+<li><div class="item-name"><a href="fn.cmp.html" class="fn">cmp</a></div><div class="item-description">Compare two <code>BigNum</code> values</div></li>
+<li><div class="item-name"><a href="fn.derive_from_seed.html" class="fn">derive_from_seed</a></div><div class="item-description">Given an input seed, generate a pseudorandom <code>BigNum</code> value</div></li>
+<li><div class="item-name"><a href="fn.div.html" class="fn">div</a></div><div class="item-description">Compute the <code>BigNum</code> division</div></li>
+<li><div class="item-name"><a href="fn.eq.html" class="fn">eq</a></div><div class="item-description">Compute equality flag</div></li>
+<li><div class="item-name"><a href="fn.from_be_bytes.html" class="fn">from_be_bytes</a></div><div class="item-description">Construct a <code>BigNum</code> value from a big-endian byte array.</div></li>
+<li><div class="item-name"><a href="fn.from_field.html" class="fn">from_field</a></div><div class="item-description">Construct a <code>BigNum</code> value from a native <code>Field</code></div></li>
+<li><div class="item-name"><a href="fn.from_le_bytes.html" class="fn">from_le_bytes</a></div><div class="item-description">Construct a <code>BigNum</code> value from little-endian byte array</div></li>
+<li><div class="item-name"><a href="fn.is_zero.html" class="fn">is_zero</a></div><div class="item-description">Check whether a <code>BigNum</code> value is zero modulo <code>MOD</code>.</div></li>
+<li><div class="item-name"><a href="fn.is_zero_integer.html" class="fn">is_zero_integer</a></div><div class="item-description">Check whether <code>val</code> is the zero <code>BigNum</code> in the integer sense.</div></li>
+<li><div class="item-name"><a href="fn.mul.html" class="fn">mul</a></div><div class="item-description">Compute the <code>BigNum</code> multiplication</div></li>
+<li><div class="item-name"><a href="fn.neg.html" class="fn">neg</a></div><div class="item-description">Negate a <code>BigNum</code> value</div></li>
+<li><div class="item-name"><a href="fn.sqr.html" class="fn">sqr</a></div><div class="item-description">Compute the <code>BigNum</code> squaring</div></li>
+<li><div class="item-name"><a href="fn.sub.html" class="fn">sub</a></div><div class="item-description">Subtract two <code>BigNum</code> values</div></li>
+<li><div class="item-name"><a href="fn.to_be_bytes.html" class="fn">to_be_bytes</a></div><div class="item-description">Construct a big-endian byte array from a <code>BigNum</code> value.</div></li>
+<li><div class="item-name"><a href="fn.to_le_bytes.html" class="fn">to_le_bytes</a></div><div class="item-description">Construct a little-endian byte array from a <code>BigNum</code> value</div></li>
+<li><div class="item-name"><a href="fn.udiv.html" class="fn">udiv</a></div><div class="item-description">Compute the <code>BigNum</code> integer division</div></li>
+<li><div class="item-name"><a href="fn.udiv_mod.html" class="fn">udiv_mod</a></div><div class="item-description">Compute the <code>BigNum</code> integer division with remainder</div></li>
+<li><div class="item-name"><a href="fn.umod.html" class="fn">umod</a></div><div class="item-description">Compute the <code>BigNum</code> remainder</div></li>
+<li><div class="item-name"><a href="fn.validate_in_field.html" class="fn">validate_in_field</a></div><div class="item-description">Validate that <code>val</code> &lt;= <code>MOD</code></div></li>
+<li><div class="item-name"><a href="fn.validate_in_range.html" class="fn">validate_in_range</a></div><div class="item-description">Validate a <code>BigNum</code> instance is correctly range constrained to contain no more than <code>MOD_BITS</code> bits</div></li>
+</ul>
+</main>
+</span>
+</body>
+</html>

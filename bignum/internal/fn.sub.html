@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../../styles.css">
+<script defer src="../../nargo_doc.js"></script>
+<title>Function sub documentation</title>
+</head>
+<body>
+<div id="sidebar-toggle">
+<button id="sidebar-toggle-button"></button>
+<div id="sidebar-toggle-title">sub</div>
+</div>
+<span id="main-contents">
+<nav class="sidebar">
+<h1><a href="../../index.html">aztec-standards</a></h1>
+<div><a href="../../all.html">All items</a></div>
+<h2 id="crate-name"><a href="../index.html">bignum</a></h2>
+<div id="crate-version">0.0.0</div>
+<h2>In module internal</h2>
+<h3>Functions</h3><ul class="item-list">
+<li><a href="fn.__add.html">__add</a></div></li>
+<li><a href="fn.__derive_from_seed.html">__derive_from_seed</a></div></li>
+<li><a href="fn.__div.html">__div</a></div></li>
+<li><a href="fn.__eq.html">__eq</a></div></li>
+<li><a href="fn.__invmod.html">__invmod</a></div></li>
+<li><a href="fn.__is_zero.html">__is_zero</a></div></li>
+<li><a href="fn.__mul.html">__mul</a></div></li>
+<li><a href="fn.__neg.html">__neg</a></div></li>
+<li><a href="fn.__pow.html">__pow</a></div></li>
+<li><a href="fn.__sqr.html">__sqr</a></div></li>
+<li><a href="fn.__sqrt.html">__sqrt</a></div></li>
+<li><a href="fn.__sub.html">__sub</a></div></li>
+<li><a href="fn.__udiv_mod.html">__udiv_mod</a></div></li>
+<li><a href="fn.add.html">add</a></div></li>
+<li><a href="fn.assert_is_not_equal.html">assert_is_not_equal</a></div></li>
+<li><a href="fn.assert_is_not_zero.html">assert_is_not_zero</a></div></li>
+<li><a href="fn.assert_is_not_zero_integer.html">assert_is_not_zero_integer</a></div></li>
+<li><a href="fn.cmp.html">cmp</a></div></li>
+<li><a href="fn.derive_from_seed.html">derive_from_seed</a></div></li>
+<li><a href="fn.div.html">div</a></div></li>
+<li><a href="fn.eq.html">eq</a></div></li>
+<li><a href="fn.from_be_bytes.html">from_be_bytes</a></div></li>
+<li><a href="fn.from_field.html">from_field</a></div></li>
+<li><a href="fn.from_le_bytes.html">from_le_bytes</a></div></li>
+<li><a href="fn.is_zero.html">is_zero</a></div></li>
+<li><a href="fn.is_zero_integer.html">is_zero_integer</a></div></li>
+<li><a href="fn.mul.html">mul</a></div></li>
+<li><a href="fn.neg.html">neg</a></div></li>
+<li><a href="fn.sqr.html">sqr</a></div></li>
+<li><a href="fn.sub.html">sub</a></div></li>
+<li><a href="fn.to_be_bytes.html">to_be_bytes</a></div></li>
+<li><a href="fn.to_le_bytes.html">to_le_bytes</a></div></li>
+<li><a href="fn.udiv.html">udiv</a></div></li>
+<li><a href="fn.udiv_mod.html">udiv_mod</a></div></li>
+<li><a href="fn.umod.html">umod</a></div></li>
+<li><a href="fn.validate_in_field.html">validate_in_field</a></div></li>
+<li><a href="fn.validate_in_range.html">validate_in_range</a></div></li>
+</ul>
+</nav>
+<main>
+<div><a href="../../index.html">aztec-standards</a> - <a href="../index.html">bignum</a>::<a href="index.html">internal</a></div>
+<h1>Function <span class="fn">sub</span></h1>
+<pre><code>pub fn sub&lt;let N: <a href="../../std/primitive.u32.html" class="primitive">u32</a>, let MOD_BITS: <a href="../../std/primitive.u32.html" class="primitive">u32</a>&gt;(
+    params: <a href="../../bignum/params/struct.BigNumParams.html" class="struct">BigNumParams</a>&lt;N, MOD_BITS&gt;,
+    lhs: [<a href="../../std/primitive.u128.html" class="primitive">u128</a>; N],
+    rhs: [<a href="../../std/primitive.u128.html" class="primitive">u128</a>; N],
+) -> [<a href="../../std/primitive.u128.html" class="primitive">u128</a>; N]</code></pre>
+
+<div class="comments">
+<p>Subtract two <code>BigNum</code> values</p>
+<p>Computes <code>result = lhs - rhs</code> using limb-wise subtraction with borrow flags,
+and an optional addition of <code>MOD</code> using carry flags. The function then
+constrains:</p>
+<ul>
+<li>all <code>result</code> limbs to be a valid <code>BigNum</code> value, and</li>
+<li>the subtraction/addition relation with the carry/borrow flags and the
+<code>underflow_modulus</code> bit.</li>
+</ul>
+<h2>Assumptions</h2>
+<ul>
+<li>All limbs of <code>lhs</code>, <code>rhs</code> and <code>MOD</code> are valid <code>BigNum</code> limbs
+(120-bit for non-top limbs, <code>TOP_LIMB_BITS</code> for the top limb).</li>
+<li>Semantically, we intend to use this only with <code>0 &lt;= lhs, rhs &lt; MOD</code>,
+even though the limb/range constraints allow values up to <code>&lt; 2^{MOD_BITS}</code>.</li>
+</ul>
+<h2>Soundness (intended relation)</h2>
+<p>This function constrains the following equations:</p>
+<pre><code>result[0]     = lhs[0]     - rhs[0]
+                + add[0]
+                + bf[0] * 2^{120}
+                - cf[0]                                        &lt; 2^{120}
+
+result[i]     = lhs[i]     - rhs[i]
+                + add[i]
+                + bf[i] * 2^{120}  - bf[i - 1]
+                - cf[i] * 2^{120}  + cf[i - 1]                 &lt; 2^{120},
+                for i = 1..N-2
+
+result[N - 1] = lhs[N - 1] - rhs[N - 1]
+                + add[N - 1]
+                - bf[N - 2]
+                + cf[N - 2]                                   &lt; 2^{TOP_LIMB_BITS}
+</code></pre>
+<p>where:</p>
+<ul>
+<li><code>bf[i]</code> are the borrow flags of the subtraction,</li>
+<li><code>cf[i]</code> are the carry flags of the optional addition, and</li>
+<li><code>add</code> is either the zero vector or <code>MOD</code>, depending on the
+<code>underflow_modulus</code> flag:
+* <code>underflow_modulus = 0</code>  =&gt;  <code>add = 0</code>
+* <code>underflow_modulus = 1</code>  =&gt;  <code>add = MOD</code></li>
+</ul>
+<p>If <code>lhs</code>, <code>rhs</code> and <code>MOD</code> are valid <code>BigNum</code> limbs and the witness for
+<code>(bf, cf, underflow_modulus)</code> is the honest one produced by <code>compute_sub_flags</code>,
+these constraints enforce:</p>
+<ul>
+<li>a valid limb-wise borrow chain for <code>lhs - rhs</code>, and</li>
+<li>a valid limb-wise addition chain for either <code>lhs - rhs</code> or
+<code>lhs - rhs + MOD</code>, with no underflow in any limb.</li>
+</ul>
+<p>Under these assumptions the constrained result equals:</p>
+<pre><code>result = lhs - rhs (mod MOD)
+</code></pre>
+<p>in the intended arithmetic.</p>
+<h2>Limitations / extra satisfying witnesses</h2>
+<p>The constraint system itself does <strong>not</strong> uniquely determine the carry/borrow
+flags nor the <code>underflow_modulus</code> bit:</p>
+<ul>
+<li>
+<p>For each limb <code>i</code>, <code>bf[i]</code> and <code>cf[i]</code> only appear in the combination
+<code>bf[i] * 2^{120} - cf[i] * 2^{120}</code>. This means that both</p>
+<pre><code>(bf[i], cf[i]) = (0, 0)  and  (bf[i], cf[i]) = (1, 1)
+</code></pre>
+<p>give the same contribution to the equation. As a result, there are multiple
+valid flag assignments for the <em>same</em> <code>lhs</code>, <code>rhs</code>, <code>add</code> and <code>result</code>.</p>
+</li>
+<li>
+<p>More importantly, when <code>lhs &lt; rhs</code>, the true field result is</p>
+<pre><code>lhs - rhs + MOD,
+</code></pre>
+<p>and as long as</p>
+<pre><code>lhs - rhs + MOD &lt; 2^{MOD_BITS},
+</code></pre>
+<p>a malicious prover can:</p>
+<ul>
+<li>set <code>underflow_modulus</code> inconsistently with the true underflow, and</li>
+<li>adjust the <code>(bf, cf)</code> flags accordingly,</li>
+</ul>
+<p>such that all equations above still hold and all <code>result</code> limbs remain
+within range. In other words, the circuit can be satisfied by a witness
+that does <strong>not</strong> correspond to the unique intended subtraction modulo
+<code>MOD</code> for some inputs with <code>lhs &lt; rhs</code>.</p>
+</li>
+</ul>
+<p>Consequently, this function is only <em>conditionally</em> sound: we rely on the
+out-of-circuit implementation of <code>compute_sub_flags</code> to provide the honest
+<code>(borrow_flags, carry_flags, underflow_modulus)</code> witness. Under that
+assumption, the constrained <code>result</code> matches <code>lhs - rhs (mod MOD)</code>.</p>
+<h2>Completeness</h2>
+<p>For inputs in the range <code>0 &lt;= lhs, rhs &lt; MOD</code> and honest flags from
+<code>compute_sub_flags</code>, the constraints are complete: every valid <code>BigNum</code>
+difference <code>lhs - rhs (mod MOD)</code> admits a satisfying assignment.</p>
+<p>Inputs with <code>lhs</code> or <code>rhs</code> in <code>[MOD, 2^{MOD_BITS})</code> are still representable
+as limb arrays and may admit satisfying witnesses, but then the operation
+no longer corresponds to a unique, well-defined subtraction in the field
+<code>Z / MOD Z</code>. Such uses are outside the intended semantics of this function.</p></div>
+</main>
+</span>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../../../styles.css">
+<script defer src="../../../nargo_doc.js"></script>
+<title>Function _share_escrow documentation</title>
+</head>
+<body>
+<div id="sidebar-toggle">
+<button id="sidebar-toggle-button"></button>
+<div id="sidebar-toggle-title">_share_escrow</div>
+</div>
+<span id="main-contents">
+<nav class="sidebar">
+<h1><a href="../../../index.html">aztec-standards</a></h1>
+<div><a href="../../../all.html">All items</a></div>
+<h2 id="crate-name"><a href="../../index.html">escrow_contract</a></h2>
+<div id="crate-version">0.0.0</div>
+<h2>In module logic</h2>
+<h3>Functions</h3><ul class="item-list">
+<li><a href="fn._get_escrow.html">_get_escrow</a></div></li>
+<li><a href="fn._share_escrow.html">_share_escrow</a></div></li>
+<li><a href="fn._withdraw.html">_withdraw</a></div></li>
+<li><a href="fn._withdraw_nft.html">_withdraw_nft</a></div></li>
+</ul>
+</nav>
+<main>
+<div><a href="../../../index.html">aztec-standards</a> - <a href="../../index.html">escrow_contract</a>::<a href="../index.html">library</a>::<a href="index.html">logic</a></div>
+<h1>Function <span class="fn">_share_escrow</span></h1>
+<pre><code>pub fn _share_escrow(
+    context: &mut <a href="../../../aztec/context/struct.PrivateContext.html" class="struct">PrivateContext</a>,
+    account: <a href="../../../protocol_types/address/aztec_address/struct.AztecAddress.html" class="struct">AztecAddress</a>,
+    escrow: <a href="../../../protocol_types/address/aztec_address/struct.AztecAddress.html" class="struct">AztecAddress</a>,
+    secret_key: <a href="../../../std/primitive.Field.html" class="primitive">Field</a>,
+)</code></pre>
+
+<div class="comments">
+<p>@notice Shares the escrow details needed to find and use the escrow contract
+@dev Emits a private log with the escrow details
+@param context The private context
+@param account The address of the account that will use the escrow
+@param escrow The address of the escrow
+@param secret_key The secret key used to derive master secret keys and public keys</p>
+</div>
+</main>
+</span>
+</body>
+</html>

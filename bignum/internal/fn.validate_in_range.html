@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../../styles.css">
+<script defer src="../../nargo_doc.js"></script>
+<title>Function validate_in_range documentation</title>
+</head>
+<body>
+<div id="sidebar-toggle">
+<button id="sidebar-toggle-button"></button>
+<div id="sidebar-toggle-title">validate_in_range</div>
+</div>
+<span id="main-contents">
+<nav class="sidebar">
+<h1><a href="../../index.html">aztec-standards</a></h1>
+<div><a href="../../all.html">All items</a></div>
+<h2 id="crate-name"><a href="../index.html">bignum</a></h2>
+<div id="crate-version">0.0.0</div>
+<h2>In module internal</h2>
+<h3>Functions</h3><ul class="item-list">
+<li><a href="fn.__add.html">__add</a></div></li>
+<li><a href="fn.__derive_from_seed.html">__derive_from_seed</a></div></li>
+<li><a href="fn.__div.html">__div</a></div></li>
+<li><a href="fn.__eq.html">__eq</a></div></li>
+<li><a href="fn.__invmod.html">__invmod</a></div></li>
+<li><a href="fn.__is_zero.html">__is_zero</a></div></li>
+<li><a href="fn.__mul.html">__mul</a></div></li>
+<li><a href="fn.__neg.html">__neg</a></div></li>
+<li><a href="fn.__pow.html">__pow</a></div></li>
+<li><a href="fn.__sqr.html">__sqr</a></div></li>
+<li><a href="fn.__sqrt.html">__sqrt</a></div></li>
+<li><a href="fn.__sub.html">__sub</a></div></li>
+<li><a href="fn.__udiv_mod.html">__udiv_mod</a></div></li>
+<li><a href="fn.add.html">add</a></div></li>
+<li><a href="fn.assert_is_not_equal.html">assert_is_not_equal</a></div></li>
+<li><a href="fn.assert_is_not_zero.html">assert_is_not_zero</a></div></li>
+<li><a href="fn.assert_is_not_zero_integer.html">assert_is_not_zero_integer</a></div></li>
+<li><a href="fn.cmp.html">cmp</a></div></li>
+<li><a href="fn.derive_from_seed.html">derive_from_seed</a></div></li>
+<li><a href="fn.div.html">div</a></div></li>
+<li><a href="fn.eq.html">eq</a></div></li>
+<li><a href="fn.from_be_bytes.html">from_be_bytes</a></div></li>
+<li><a href="fn.from_field.html">from_field</a></div></li>
+<li><a href="fn.from_le_bytes.html">from_le_bytes</a></div></li>
+<li><a href="fn.is_zero.html">is_zero</a></div></li>
+<li><a href="fn.is_zero_integer.html">is_zero_integer</a></div></li>
+<li><a href="fn.mul.html">mul</a></div></li>
+<li><a href="fn.neg.html">neg</a></div></li>
+<li><a href="fn.sqr.html">sqr</a></div></li>
+<li><a href="fn.sub.html">sub</a></div></li>
+<li><a href="fn.to_be_bytes.html">to_be_bytes</a></div></li>
+<li><a href="fn.to_le_bytes.html">to_le_bytes</a></div></li>
+<li><a href="fn.udiv.html">udiv</a></div></li>
+<li><a href="fn.udiv_mod.html">udiv_mod</a></div></li>
+<li><a href="fn.umod.html">umod</a></div></li>
+<li><a href="fn.validate_in_field.html">validate_in_field</a></div></li>
+<li><a href="fn.validate_in_range.html">validate_in_range</a></div></li>
+</ul>
+</nav>
+<main>
+<div><a href="../../index.html">aztec-standards</a> - <a href="../index.html">bignum</a>::<a href="index.html">internal</a></div>
+<h1>Function <span class="fn">validate_in_range</span></h1>
+<pre><code>pub fn validate_in_range&lt;T, let N: <a href="../../std/primitive.u32.html" class="primitive">u32</a>, let MOD_BITS: <a href="../../std/primitive.u32.html" class="primitive">u32</a>&gt;(limbs: [T; N])
+<div class="where-clause">where
+    T: <a href="../../std/convert/trait.Into.html" class="trait">Into</a>&lt;<a href="../../std/primitive.Field.html" class="primitive">Field</a>&gt;</div></code></pre>
+
+<div class="comments">
+<p>Validate a <code>BigNum</code> instance is correctly range constrained to contain no more than <code>MOD_BITS</code> bits</p>
+<p>Constrain the <code>BigNum</code> instance to be &lt; 2^MOD_BITS by:
+- Constraining each limb(0..N-2) to be 120-bit limb
+- Constraining the last limb to be <code>MOD_BITS - 120 * (N - 1)</code></p>
+<h2>Note</h2>
+<p>This can be a very expensive function, when the <code>TOP_LIMB_BITS</code> is uncommon</p>
+<p>For example: BLS12_377Fr, with <code>TOP_LIMB_BITS</code>=13
+It creates a new 13-bit range table, which consists of roughly 3k variables
+And ~2k circuit gates</p>
+<p>Compare this to BLS12_377Fq, with <code>TOP_LIMB_BITS</code>=17
+It is nicely decomposed into
+14-bit range check and 3-bit range check - much much cheaper, since 14-bit range checks
+are already pretty common for 120-bit range checks</p>
+</div>
+</main>
+</span>
+</body>
+</html>

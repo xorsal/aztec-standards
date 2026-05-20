@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../../styles.css">
+<script defer src="../../nargo_doc.js"></script>
+<title>Function batch_invert documentation</title>
+</head>
+<body>
+<div id="sidebar-toggle">
+<button id="sidebar-toggle-button"></button>
+<div id="sidebar-toggle-title">batch_invert</div>
+</div>
+<span id="main-contents">
+<nav class="sidebar">
+<h1><a href="../../index.html">aztec-standards</a></h1>
+<div><a href="../../all.html">All items</a></div>
+<h2 id="crate-name"><a href="../index.html">bignum</a></h2>
+<div id="crate-version">0.0.0</div>
+<h2>In module bignum</h2>
+<h3>Traits</h3><ul class="item-list">
+<li><a href="trait.BigNum.html">BigNum</a></div></li>
+</ul>
+<h3>Functions</h3><ul class="item-list">
+<li><a href="fn.batch_invert.html">batch_invert</a></div></li>
+<li><a href="fn.batch_invert_slice.html">batch_invert_slice</a></div></li>
+<li><a href="fn.compute_quadratic_expression.html">compute_quadratic_expression</a></div></li>
+<li><a href="fn.conditional_select.html">conditional_select</a></div></li>
+<li><a href="fn.derive_bignum.html">derive_bignum</a></div></li>
+<li><a href="fn.evaluate_quadratic_expression.html">evaluate_quadratic_expression</a></div></li>
+<li><a href="fn.to_field.html">to_field</a></div></li>
+</ul>
+</nav>
+<main>
+<div><a href="../../index.html">aztec-standards</a> - <a href="../index.html">bignum</a>::<a href="index.html">bignum</a></div>
+<h1>Function <span class="fn">batch_invert</span></h1>
+<pre><code>pub unconstrained fn batch_invert&lt;T, let M: <a href="../../std/primitive.u32.html" class="primitive">u32</a>&gt;(x: [T; M]) -> [T; M]
+<div class="where-clause">where
+    T: <a href="../../bignum/bignum/trait.BigNum.html" class="trait">BigNum</a></div></code></pre>
+
+<div class="comments">
+<p>Computes the modular inverses of multiple BigNum values efficiently (unconstrained).</p>
+<p>Uses Montgomery's batch inversion trick to compute all inverses with only a single
+modular inversion, making this much more efficient than calling <code>__invmod</code> repeatedly.</p>
+<h2>Requirements</h2>
+<ul>
+<li><code>MOD</code> must be prime (<code>params.has_multiplicative_inverse == true</code>)</li>
+<li>Zero elements are allowed and will map to zero in the output</li>
+</ul>
+<h2>Performance</h2>
+<p>Computes M inverses using:</p>
+<ul>
+<li>3(M-1) multiplications</li>
+<li>1 inversion</li>
+</ul>
+<p>This is much cheaper than M separate inversions for M &gt; 1.</p>
+<h2>Safety</h2>
+<p><strong>UNCONSTRAINED</strong>: No constraints are generated. Use the results as witnesses and
+constrain them appropriately (e.g., verify <code>x[i] * result[i] == 1</code> using
+<code>evaluate_quadratic_expression</code>).</p>
+<h2>Example</h2>
+<pre><code><span class="comment">// Safety: unconstrained batch inversion</span>
+<span class="kw">let</span> inverses = <span class="kw">unsafe</span> { batch_invert([a, b, c]) };
+<span class="comment">// inverses[0] == a^{-1}, inverses[1] == b^{-1}, inverses[2] == c^{-1}</span></code></pre></div>
+</main>
+</span>
+</body>
+</html>
