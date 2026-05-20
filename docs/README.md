@@ -15,3 +15,17 @@ Requires `nargo` from the Aztec toolchain matching this repo's pinned version
 Output lands in `docs/api/latest/`. Open `docs/api/latest/index.html`.
 
 The `docs/api/` directory is gitignored.
+
+## Publish
+
+```bash
+yarn docs:publish
+```
+
+Regenerates the docs and pushes them to
+[xorsal/aztec-standards-docs](https://github.com/xorsal/aztec-standards-docs)
+where GitHub Pages serves them at
+<https://xorsal.github.io/aztec-standards-docs/>.
+
+Hosting lives on a personal repo because defi-wonderland disables Pages on
+forks of its repositories. Override the destination with `DOCS_REPO` / `DOCS_BRANCH`.

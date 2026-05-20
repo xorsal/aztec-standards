@@ -21,7 +21,8 @@
     "bench": "NODE_NO_WARNINGS=1 aztec-benchmark --suffix _base",
     "ccc": "yarn clean && yarn compile && yarn codegen",
     "deploy": "NODE_NO_WARNINGS=1 tsx scripts/deploy.ts",
-    "docs": "./scripts/generate-docs.sh"
+    "docs": "./scripts/generate-docs.sh",
+    "docs:publish": "./scripts/publish-docs.sh"
   },
   "lint-staged": {
     "*.ts": "prettier --write -u"
